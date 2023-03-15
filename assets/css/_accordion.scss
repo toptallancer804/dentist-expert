@@ -1,0 +1,27 @@
+.accordion {
+    cursor: pointer;
+    width: 100%;
+    transition: 0.4s;
+    position: relative;
+  }
+  
+  
+  .accordion:after {
+    content: '\002B';
+    color: #222C41;
+    font-size: 40px;
+    position: absolute;
+    top: 50%;
+    right: 20px;
+    transform: translateY(-50%);
+  }
+  
+  .active:after {
+    content: "\2212";
+  }
+  
+  .panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+  }

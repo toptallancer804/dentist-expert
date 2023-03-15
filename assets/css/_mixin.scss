@@ -1,0 +1,484 @@
+
+
+$mWidth: 768px;
+
+@mixin sp {
+    @media (max-width: $mWidth) {
+        @content;
+    }
+}
+
+@mixin pc {
+    @media (min-width: $mWidth) {
+        @content;
+    }
+}
+
+@mixin sm {
+    @media (max-width: 525px) {
+        @content;
+    }
+}
+
+@mixin xs {
+    @media (max-width: 360px) {
+        @content;
+    }
+}
+
+@mixin media($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin max-media($width) {
+    @media (max-width: $width) {
+        @content;
+    }
+}
+
+@mixin min-media($width) {
+    @media (min-width: $width) {
+        @content;
+    }
+}
+
+@mixin hide-pc {
+    @include pc{
+        display: none;
+    };
+}
+
+@mixin hide-sp {
+  @include sp{
+    display: none;
+  };
+}
+
+[hide-sp]{
+    @include sp{
+        display: none;
+    };
+}
+
+// [pc]{
+//     @include sp{
+//         display: none;
+//     }
+// }
+
+// [sp]{
+//     display: none;
+//     @include sp{
+//         display: unset;
+//     }
+// }
+
+@mixin flex-hc-vc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin flex-he-vc {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+@mixin flex-hb-vc {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+@mixin flex-hc {
+    display: flex;
+    justify-content: center;
+}
+
+@mixin flex-vc {
+    display: flex;
+    align-items: center;
+}
+
+
+@mixin flex-col {
+    flex-direction: column;
+}
+@mixin flex-col-reverse {
+    flex-direction: column;
+}
+@mixin flex-row {
+    flex-direction: row;
+}
+@mixin flex-row-reverse {
+    flex-direction: row-reverse;
+}
+@mixin flex-hb-vc {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+@mixin flex-hb {
+    display: flex;
+    justify-content: space-between;
+}
+
+@mixin flex-he {
+    display: flex;
+    justify-content: flex-end;
+}
+
+@mixin flex-hb-ve {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+@mixin flex-hc-ve {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+}
+@mixin flex-vs {
+    display: flex;
+    align-items: flex-start;
+}
+@mixin flex-ve {
+    display: flex;
+    align-items: flex-end;
+}
+
+@mixin pos-hv-init {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin pos-hv-center {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin pos-h-center {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+@mixin pos-v-center {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+@mixin first {
+    &:first-child {
+        @content;
+    }
+}
+
+@mixin last {
+    &:last-child {
+        @content;
+    }
+}
+
+@mixin not-first {
+    &:not(:first-child) {
+        @content;
+    }
+}
+
+@mixin not-last {
+    &:not(:last-child) {
+        @content;
+    }
+}
+
+@mixin even {
+  &:nth-child(even){
+    @content;
+  }
+}
+
+@mixin odd {
+  &:nth-child(odd){
+    @content;
+  }
+}
+
+@include sp {
+    br[hide] {
+        display: none;
+    }
+}
+br[sp] {
+    display: none;
+    @include sp {
+        display: block;
+    }
+}
+br[pc] {
+    display: block;
+    @include sp {
+        display: none;
+    }
+}
+
+@mixin hidden-visible {
+    opacity: 0;
+    visibility: hidden;
+    &.active{
+        opacity: 1;
+        visibility: visible;
+    }
+}
+@mixin LeftTopFit {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+@mixin centerImage {
+    @include pos-hv-center;
+    min-width: 100%;
+    min-height: 100%;        
+    width: auto;
+    height: auto;
+}
+
+@mixin overLayImage {
+    &::after{
+        content: '';
+        @include LeftTopFit;
+        background-color: rgba($color: #000000, $alpha: 0.2);
+    }
+}
+
+@mixin menuHover {
+    &::after {
+        position: absolute;
+        content: "";
+        top: calc(100% + 4px);
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #333;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 0.8;
+    }
+}
+
+@mixin btnHover {
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #fff;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.5s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@mixin btnHover_black {
+    &::after {
+        position: absolute;
+        content: "";
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #000;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.4s;
+        z-index: -1;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+    }
+}
+
+@mixin menuHoverL {
+    &::after {
+        position: absolute;
+        content: "";
+        top: 100%;
+        left: 0;
+        width: 100%;
+        height: 2px;
+        background: #595959;
+        transform: scaleX(0);
+        transform-origin: right;
+        transition: transform 0.8s;
+    }
+
+    &:hover::after {
+        transform: scaleX(1);
+        transform-origin: left;
+        opacity: 0.8;
+    }
+}
+
+@mixin hover {
+    transition: opacity 0.2s;
+    &:hover{
+        opacity: 0.8!important;
+    }
+}
+
+@mixin circle($width, $height, $color) {
+    width: $width;
+    height: $height;
+    border-radius: 50%;
+    background: $color ;
+}
+
+$pc_width: 1400;
+$sp_width:768;
+
+$pc_ratio: calc(100 / $pc_width);
+$sp_ratio: calc(100 / $sp_width);
+
+@function rem($value) {
+    $result: $pc_ratio * $value * 1vw;
+    @return $result;
+}
+
+@function rem_sp($value) {
+    $result: $sp_ratio * $value * 1vw;
+    @return $result;
+}
+@function px($value){
+    $result: $value * 1px;
+    @return $result;
+}
+
+@mixin font($size, $height) {
+    font-size: px($size);
+    line-height: px($height);
+}
+
+@mixin rfont($size) {
+    font-size: px($size);
+    line-height: 1.6;
+}
+
+@mixin size($width, $height) {
+    width: px($width);
+    height: px($height);
+}
+
+.smooth-scroll {
+    height: 100vh;
+    width: 100%;
+}
+
+.scrollbar-track {
+    display: none!important;
+}
+
+.is-sp-flex {
+    display: none;
+    @include sp {
+        display: flex;
+    }
+}
+  /*! locomotive-scroll v3.5.4 | MIT License | https://github.com/locomotivemtl/locomotive-scroll */
+    
+html.has-scroll-smooth {
+    overflow: hidden;
+}
+
+html.has-scroll-dragging {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+[data-scroll-container]{
+    overflow: hidden!important;
+}
+.has-scroll-smooth body {
+    overflow: hidden;
+}
+
+.has-scroll-smooth [data-scroll-container] {
+    min-height: 100vh;
+}
+
+.c-scrollbar {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 11rem;
+    height: 100vh;
+    transform-origin: center right;
+    transition: transform 0.3s, opacity 0.3s;
+    opacity: 0;
+}
+
+.c-scrollbar:hover {
+    transform: scaleX(1.45);
+}
+
+.c-scrollbar:hover,
+.has-scroll-scrolling .c-scrollbar,
+.has-scroll-dragging .c-scrollbar {
+    opacity: 1;
+}
+
+.c-scrollbar_thumb {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: black;
+    opacity: 0.5;
+    width: 7rem;
+    border-radius: 10rem;
+    margin: 2rem;
+    cursor: -webkit-grab;
+    cursor: grab;
+}
+
+.has-scroll-dragging .c-scrollbar_thumb {
+    cursor: -webkit-grabbing;
+    cursor: grabbing;
+}
+
+@mixin background-init {
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.cover-footer{
+    z-index: 1;
+}
