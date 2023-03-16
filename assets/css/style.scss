@@ -2,6 +2,21 @@
 @import "_font";
 @import "_mixin";
 @import "_accordion";
+@import "./layout";
+
+.pc-only{
+    display: block;
+    @include media-sp{
+        display: none;
+    }
+}
+
+.sp-only{
+    display: none;
+    @include media-sp{
+        display: block;
+    }
+}
 
 .p-header {
     padding-left: 46rem;
@@ -11,53 +26,25 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    @include media-pc{
+        padding-bottom: 0;
+    }
+    @include media-sp{
+        padding: 24rem 15rem 18rem 24rem;
+        align-items: flex-start;
+    }
     .p-items {
         display: flex;
         flex-direction: column;
         justify-content: flex-end;
         align-items: flex-end;
-        .__item-top {
-            display: flex;
-            align-items: center;
-            .__item-ttl {
-                width: 55px;
-                height: 29px;
-                border-radius: 5px;
-                background: #e9e3d3;
-                font-family: YuGothic;
-                font-weight: bold;
-                font-size: 17px;
-                letter-spacing: 0.04em;
-                line-height: 26.38px;          
-                color: #696459;
-            }
-            .__item-subttl {
-                font-family: YuGothic;
-                font-weight: bold;
-                font-size: 17px;
-                line-height: 28.3px;             
-                color: #404040;
-                padding-left: 13px;
-            }
-            .__item-phone {
-                padding-left: 37px;
-                display: flex;
-                align-items: center;
-                gap: 4px;
-                .__number {
-                    font-family: Marcellus,serif;
-                    font-weight: normal;
-                    font-size: 32.09px;
-                    letter-spacing: -0.02em;
-                    line-height: 60.53px;                 
-                    color: #635146;
-                }
-            }
-        }
         .__item-bottom {
             display: flex;
             justify-content: center;
             gap: 17px;
+            @include media-sp{
+                gap: 20rem;
+            }
             .__web {
                 display: flex;
                 align-items: center;
@@ -65,7 +52,6 @@
                 font-weight: bold;
                 font-size: 18px;
                 letter-spacing: -0.02em;
-                line-height: 67.08px;
                 text-align: center;
                 color: #ea6a54;
                 width: 242px;
@@ -75,6 +61,15 @@
                 border: 1px solid #ea6a54;
                 padding-left: 28px;
                 position: relative;
+                @include media-sp{
+                    width: 220rem;
+                    height: 84rem;
+                    font-size: 22rem;
+                    line-height: 1.2;
+                    text-align: center;
+                    padding: 0;
+                    justify-content: center;
+                }
                 &::after {
                     content: "";
                     position: absolute;
@@ -84,7 +79,9 @@
                     transform: translateY(-50%);
                     width: 5px;
                     height: 10px;
-                    
+                    @include media-sp{
+                        right: 17rem;
+                    }
                 }
             }
             .__line {
@@ -112,27 +109,152 @@
                     transform: translateY(-50%);
                     width: 5px;
                     height: 10px;
+                    @include media-sp{
+                        right: 17rem;
+                    }
+                }
+                @include media-sp{
+                    width: 220rem;
+                    height: 84rem;
+                    font-size: 22rem;
+                    line-height: 1.2;
+                    text-align: center;
+                    padding: 0;
+                    justify-content: center;
                 }
             }
         }
-    }   
-}
-
-.p-main {
-    .p-fv {
-        figure {
-            img {
-                width: 100%;
+    }
+    &__logo{
+        .logo{
+            @include media-sp{
+                img{
+                    width: 207rem;
+                }
+            }
+            &__pc{
+                @include media-pc{
+                    display: none;
+                }
+            }
+            &__sp{
+                display: none;
+                @include media-pc{
+                    display: block;
+                }
             }
         }
-        padding-left: 307rem;
+    }
+
+}
+
+header{
+    .__item-top {
+        display: flex;
+        align-items: center;
+        
+        &--pc{
+            @include media-pc{
+                display: none;
+            }
+        }
+        &--sp{
+            display: none;
+            @include media-pc{
+                display: flex;
+                justify-content: flex-end;
+                padding-right: 27rem;
+            }
+            @include media-sp{
+                justify-content: flex-start;
+                padding-left: 24rem;
+                padding-right: 11rem;
+    
+            }
+        }
+        .__item-ttl {
+            @include flex-hc-vc;
+            width: 55px;
+            height: 29px;
+            border-radius: 5px;
+            background: #e9e3d3;
+            font-family: YuGothic;
+            font-weight: bold;
+            font-size: 17px;
+            letter-spacing: 0.04em;
+            line-height: 26.38px;          
+            color: #696459;
+            @include media-sp{
+                width: 53rem;
+                height: 32rem;
+                font-size: 20rem;
+                
+            }
+        }
+        .__item-subttl {
+            font-family: YuGothic;
+            font-weight: bold;
+            font-size: 17px;
+            line-height: 28.3px;             
+            color: #404040;
+            padding-left: 13px;
+            @include media-sp{
+                font-size: 20rem;
+                padding-left: 10rem;
+            }
+            span{
+                font-weight: 500;
+                @include media-sp{
+                    margin-left: 5rem;
+                }
+            }
+        }
+        .__item-phone {
+            padding-left: 37px;
+            display: flex;
+            align-items: center;
+            gap: 4px;
+            @include media-sp{
+                padding-left: 23rem;
+
+            }
+            .__number {
+                font-family: Marcellus,serif;
+                font-weight: normal;
+                font-size: 32.09px;
+                letter-spacing: -0.02em;
+                line-height: 60.53px;                 
+                color: #635146;
+                @include media-sp{
+                    font-size: 35rem;
+                }
+            }
+            figure{
+                img{
+                    @include media-sp{
+                        width: 26rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.p-main {    
+    .p-fv {
         position: relative;
-        &__contents {
+        figure {
             position: absolute;
-            z-index: 1;
-            left: 18%;
-            top: 11%;
-            padding-left: 15rem;
+            bottom: 0;
+            right: 0;
+            max-height: 100%;
+        }
+        
+        &__contents {
+            padding: 75rem 0 170rem 173rem;
+            @include media-sp{
+                padding: 57rem 0 162rem 39rem;
+            }
             .__subttl {
                 font-family: YuGothic;
                 font-weight: bold;
@@ -140,6 +262,11 @@
                 letter-spacing: 0.04em;          
                 color: #ea6a54;
                 padding-bottom: 20px;
+                padding-left: 15rem;
+                @include media-sp{
+                    padding: 0;
+                    font-size: 24rem;
+                }
             }
             .__ttl {
                 font-family: YuMincho;
@@ -150,23 +277,80 @@
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                padding-bottom: 64px;
-                span {
-                    font-family: YuMincho;
-                    font-weight: 500;
-                    font-size: 48px;
-                    line-height: 65px;        
-                    color: #4a2e2e;
+                padding-bottom: 64rem;
+                padding-left: 15rem;
+                @include media-sp{
+                    padding-top: 12rem;
+                    padding-left: 0;
+                    font-size: 48rem;
+                    line-height: 65rem;
+                    padding-bottom: 0;
                 }
             }
             .__wrap {
                 display: flex;
                 align-items: center;
                 gap: 52rem;
+                @include media-sp{
+                    display: block;
+                }
                 .__icon {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    justify-content: center;
+                    border-radius: 50%;
+                    position: relative;
+                    z-index: 1;
+                    width: 190px;
+                    @include media-sp{
+                        width: max-content;
+                    }
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        left: 50%;
+                        transform: translate(-50%, -50%);
+                        width: 190px;
+                        height: 190px;
+                        z-index: -1;
+                        filter: 11.128439903259277px;
+                        border-radius: 1000px;
+                        background: white;
+                        @include media-sp{
+                            width: 142rem;
+                            height: 142rem;
+                        }
+                    }
+                    &:first-child{
+                        @include media-sp{
+                            margin-top: 53rem;
+                        }
+                    }
+                    &:nth-child(2){
+                        margin-bottom: 35px;
+                        @include media-sp{
+                            position: absolute;
+                            bottom: 210rem;
+                            left: 300rem;
+                        }
+                    }
+                    &:last-child{
+                        @include media-sp{
+                            margin-top: 36rem;
+                            margin-left: 64rem;
+                        }
+                    }
+                    figure{
+                        position: unset;
+                        img{
+                            @include media-sp{
+                                height: 47rem;
+                                width: auto;
+                            }
+                        }
+                    }
                     &-ttl {
                         font-family: Hiragino Sans;
                         font-weight: normal;
@@ -177,6 +361,11 @@
                         flex-direction: column;
                         align-items: center;
                         padding-top: 16px;
+                        @include media-sp{
+                            padding-top: 16rem;
+                            font-size: 18rem;
+
+                        }
                         span {
                             font-family: Hiragino Sans;
                             font-weight: normal;
@@ -184,6 +373,9 @@
                             line-height: 30px;
                             text-align: center;
                             color: #fba443;
+                            @include media-sp{
+                                font-size: 18rem;
+                            }
                         }
                     }
                     .pt-10 {
@@ -193,16 +385,15 @@
                         line-height: 20px;
                     }
                 }
-                .pb-35 {
-                    padding-bottom: 35px;
-                }
             }
         }
         
     }
-    .p-treatment {
+    .p-treatment {   
+        position: relative; 
         .__treatment {
             background-size: cover;
+            background-position: center;
             height: 384px;          
             position: relative;
             img {
@@ -213,18 +404,29 @@
             background: #fff;
             position: absolute;
             z-index: 1;
-            bottom: -34%;
-            left: 11%;
+            top: -115rem;
+            left: 50%;
+            transform: translateX(-50%);
             padding-left: 112rem;
-            padding-top: 43px;
+            padding-top: 43rem;
             padding-right: 143rem;
-            padding-bottom: 64px;
+            padding-bottom: 64rem;            
+            width: max-content;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            border-radius: 10px;
+            @include media-sp {
+                padding: 32rem 79rem 43rem 36rem;
+            }
             &-top {
                 display: flex;
-                align-items: center;
-                justify-content: center;
-                gap: 60rem;
+                align-items: center;                           
                 padding-bottom: 35px;
+                padding-left: 23rem;
+                @include media-sp {
+                    padding-bottom: 25rem;
+                }
                 .__ttl {
                     font-family: YuMincho;
                     font-weight: 500;
@@ -233,6 +435,14 @@
                     line-height: 67.95px;                  
                     color: #635146;
                     min-width: max-content;
+                    padding-right: 60rem;
+                    @include media-sp {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        padding-right: 29rem;
+                        font-size: 47rem;
+                    }
                 }
                 .__text {
                     display: flex;
@@ -249,12 +459,14 @@
                             display: flex;
                             flex-direction: column;
                             padding-top: 22px;
-                            span {
-                                font-family: "Noto Serif JP",serif;
-                                font-weight: normal;
-                                font-size: 23px;
-                                line-height: 25px;                      
-                                color: #4a2e2e;
+                            @include media-sp {
+                                font-size: 32rem;
+                            }
+                            span {                              
+                                font-size: 25px;  
+                                @include media-sp {
+                                    font-size: 32rem;
+                                }                              
                             }
                         }
                         .__text-number {
@@ -263,29 +475,51 @@
                             font-size: 98px;
                             letter-spacing: -0.06em;
                             color: #4a2e2e;
+                            @include media-sp {
+                                font-size: 101rem;
+                            }
+                            span{
+                                font-size: 28px;
+                                @include media-sp {
+                                    font-size: 46rem;
+                                }
+                            }
                         }
                     }
-                    .__text-subttl {
-                        font-family: YuGothic;
-                        font-weight: 500;
-                        font-size: 11px;
-                        line-height: 17px;                      
-                        color: #755b38;
-                        display: flex;
-                        flex-direction: column;
-                        span {
+                    .__text-subttl {                       
+                        &--pc {
                             font-family: YuGothic;
                             font-weight: 500;
                             font-size: 11px;
-                            line-height: 17px;                         
+                            line-height: 17px;                      
                             color: #755b38;
-                        }
+                            display: flex;
+                            flex-direction: column;
+                            @include media-sp {
+                                display: none;
+                            }
+                        }                       
 
                     }
                 }
             }
+            .__text-subttl--sp {
+                display: none;
+                @include media-sp {
+                    display: block;
+                    font-family: YuGothic;
+                    font-weight: 500;
+                    font-size: 20rem;
+                    line-height: 30px;                  
+                    color: #755b38;  
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start; 
+                    padding-bottom: 31rem;                 
+                }  
+            }
             &-bottom {
-                padding-left: 58rem;
+                padding-left: 96rem;
                 padding-right: 27rem;
                 .treatment__line {
                     display: flex;
@@ -294,16 +528,38 @@
                     font-family: YuMincho;
                     font-weight: 500;
                     font-size: 28px;
-                    letter-spacing: -0.02em;
-                    line-height: 115.59px;                
+                    letter-spacing: -0.02em;                                
                     color: #fff;
                     width: 500px;
                     height: 93px;
                     background: #ea6a54;  
                     border-radius: 10px;
-                    position: relative; 
+                    position: relative;
+                    transition: all ease 0.3s; 
+                    @include media-sp {
+                        font-size: 28rem;
+                        width: 500rem;
+                        height: 93rem;
+                    }
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        width: 100%;
+                        background: #fff; 
+                        z-index: -1;
+                    }
+                    &:hover::before {
+                        width: 0%;
+                        transition: all 0.3s ease;
+                        color: #ea6a54;                        
+                    }
                     span {
                         font-size: 34px;
+                        @include media-sp {
+                            font-size: 34rem;
+                        }
                     }
                     &::after {
                         content: "";
@@ -314,61 +570,85 @@
                         transform: translateY(-50%);
                         width: 10px;
                         height: 19px;
+                        @include media-sp {
+                            right: 30rem;
+                        }
                     }
                 }
             }
         }
     }
-    .p-trouble {    
-        padding-top: 41px;
-        display: flex;
-        justify-content: flex-end;
-        &__pain {
+    .p-trouble {   
+        position: relative;     
+        &__text {       
+            padding-top: 101rem;
+            padding-left: 231rem;
+            padding-bottom: 107rem;
             position: relative;
-        }
-        &__text {
-            position: relative;
-            z-index: 1;
-            left: 30px;
-            top: 60px;
+            z-index: 1;     
+            @include media-sp {
+            padding-top: 50rem;
+            padding-left: 100rem;
+            }    
             .__ttl {
                 font-family: YuMincho;
                 font-weight: 600;
                 font-size: 45px;
-                letter-spacing: 0.12em;
-                line-height: 67.95px;      
+                letter-spacing: 0.12em; 
+                line-height: 67.95px;        
                 color: #635146;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
+                @include media-sp {
+                    font-size: 45rem;
+                }
                 .t-color {
                     color: #ea6a54;
                 }
             }
             .__text {
-                padding-top: 40px;               
+                padding-top: 56px;
+                padding-bottom: 0px;
+                @include media-sp {
+                    padding-top: 28rem;
+                }               
                 .__text-icon {
                     display: flex;
-                    align-items: center;
-                    gap: 13px;                
+                    align-items: center;                                
                     .__subttl {
+                        padding-left: 13px;
                         font-family: YuGothic;
                         font-weight: bold;
                         font-size: 16px;
                         letter-spacing: 0.02em;
                         line-height: 52.62px;                    
                         color: #404040;
+                        @include media-sp {
+                            font-size: 16rem;
+                            padding-left: 13rem;
+                            line-height: 2.5;
+                        }
                     }
                 }
             }
         }
-
-        
+        &__pain {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            max-height: 100%;           
+        }              
+      
     }
     .p-solve {
-        padding-top: 76px;
-        padding-left: 150rem;
-        padding-right: 150rem;
+        padding-top: 76rem;
+        padding-left: 140rem;
+        padding-right: 140rem;
+        @include media-sp {
+            padding-left: 100rem;
+            padding-right: 100rem;
+        }
         &__ttl {
             display: flex;
             flex-direction: column;
@@ -376,39 +656,44 @@
             font-family: YuMincho;
             font-weight: 500;
             font-size: 45px;
-            letter-spacing: 0.1em;
-            line-height: 67.95px;     
+            letter-spacing: 0.1em;       
             color: #635146;
-            .s-color {
-                color: #ea6a54;
-                font-family: YuMincho;
-                font-weight: 500;
-                font-size: 45px;
-                letter-spacing: 0.1em;
-                line-height: 67.95px;   
+            @include media-sp {
+                font-size: 35rem;
+            }
+            .s-color {         
+                font-size: 45px;  
+                color: #FBA443;  
+                @include media-sp {
+                    font-size: 35rem;
+                }         
             }
             .pb-80 {
-                font-family: YuMincho;
-                font-weight: 500;
-                font-size: 45px;
-                letter-spacing: 0.1em;
-                line-height: 67.95px;     
                 color: #635146;
                 padding-bottom: 80px;
+                font-size: 45px;
+                @include media-sp {
+                    padding-bottom: 80rem;
+                    font-size: 35rem;
+                }
             }
             .__btn {
                 @include flex-hc-vc;
                 font-family: YuGothic;
                 font-weight: bold;
                 font-size: 27px;
-                letter-spacing: 0.06em;
-                line-height: 67.95px;
-                text-align: center;
+                letter-spacing: 0.06em; 
                 color: #fff;              
                 height: 80px;
                 background: #787471;
                 width: 100%;
                 margin-bottom: 67px;
+                @include media-sp {
+                    font-size: 25rem;
+                    margin-bottom: 67rem;
+                    height: 80rem;
+                    padding: 0 10rem;
+                }
             }
         }
         &__contents {
@@ -416,9 +701,18 @@
             flex-wrap: wrap;
             justify-content: center;
             align-items: flex-start;
-            gap: 15px 40px ;
+            gap: 20px 40px ;
+            @include media-sp {
+                gap: 25rem 10rem;
+            }
+            &:last-child {
+                padding-bottom: 185rem;
+            }           
             .__item {
                 width: calc((100% - 80px) / 3);
+                @include media-sp {
+                    width: 100%;
+                }
                 figure {
                     img {
                         width: 100%;
@@ -429,86 +723,112 @@
                     font-weight: bold;
                     font-size: 22px;
                     letter-spacing: 0.1em;
-                    line-height: 35.85px;
-                    text-align: center;
                     color: #FBA443;
                     display: flex;
                     flex-direction: column;
                     align-items: center;
                     padding-top: 25px;
                     padding-bottom: 21px;
-                    span {
-                        font-family: YuGothic;
-                        font-weight: bold;
-                        font-size: 22px;
-                        letter-spacing: 0.1em;
-                        line-height: 35.85px;
-                        text-align: center;
-                        color: #635146;
-                    }
-                    .c-color {
+                        @include media-pc {
+                            font-size: 22rem;
+                        }
+                        @include media-sp {
+                            font-size: 26rem;
+                            padding-top: 25rem;
+                            padding-bottom: 21rem;
+                        }                 
+                }
+                .pt-40 {
+                    padding-top: 40rem;
+                }
+                .c-color {
+                    color: #FBA443;
+                    @include media-sp {
                         color: #FBA443;
-                    }
-                    .origin-color {
-                        color: #635146;
-                    }
-                    .d-flex {
-                        color: #FBA443;
-                        display: flex;
                     }
                 }
-                .__item-subttl { 
-                    height: 160px;
+                .origin-color {
+                    color: #635146;
+                }
+                .d-flex {
+                    color: #FBA443;
+                    display: flex;
+                }
+                }
+                .__item-subttl {             
                     font-family: YuGothic;
                     font-weight: 500;
-                    font-size: 14px;
-                    line-height: 25.85px;
-                    color: #404040;                    
+                    font-size: 14px;                 
+                    color: #404040; 
+                    @include media-pc {
+                        font-size: 16rem;
+                    } 
+                    @include media-sp {
+                        font-size: 20rem;
+                    }                  
                 }
-                .pb-66 {
-                    padding-bottom: 66px;
+                .pb-60 {
+                    padding-bottom: 40rem;
+                    @include media-sp {
+                        padding-bottom: 40rem;
+                    }
                 }
             }
-        }
     }
     .p-cost {
-        background: url(../img/cost.jpg);
+        background: url(../img/cost.jpg) no-repeat;
         background-size: cover;
+        background-position: right bottom;
         width: 100%;
-        height: 1080px;  
-        padding-left: 149rem;   
-        padding-top: 123px;                 
+        padding-top: 123rem;
+        padding-bottom: 115rem;    
+        &__container{
+            max-width: 1140px;                 
+            padding-left: 20px;
+            padding-right: 20px;
+            margin-left: auto;
+            margin-right: auto;
+        }
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
             font-size: 36px;
             letter-spacing: 0.1em;
-            line-height: 60px;        
+            line-break: 2.5;       
             color: #635146;
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
             padding-bottom: 66px;
+            @include media-pc {
+                font-size: 34rem;
+                padding-bottom: 66rem;
+            }
+            @include media-sp {
+                font-size: 30rem;
+                padding-bottom: 66rem;
+            }
             .cost__color {
                 color: #E96556;
-            }
-            span {
-                font-family: YuGothic;
-                font-weight: bold;
-                font-size: 36px;
-                letter-spacing: 0.1em;
-                line-height: 60px;        
-                color: #635146;
-            }
-            
+                @include media-pc {
+                    font-size: 34rem;
+                }
+                @include media-sp {
+                    font-size: 30rem;
+                }
+            }         
         }
         &__contents {
-            width: 703px;
-            padding-top: 43px;
-            padding-left: 52px;
-            padding-right: 52px;
-            padding-bottom: 56px;
+            padding-top: 43rem;
+            padding-left: 52rem;
+            padding-right: 52rem;
+            padding-bottom: 56rem;
             background: #fff;
+            max-width: 703px;
+            @include media-sp {
+                max-width: 703rem;
+                padding: 40rem 50rem 50rem 56rem;
+            }
             .__ttl {
                 font-family: YuMincho;
                 font-weight: 600;
@@ -516,7 +836,11 @@
                 letter-spacing: 0.1em;
                 line-height: 35.85px;              
                 color: #635146;
-                padding-bottom: 18px;                
+                padding-bottom: 18px; 
+                @include media-sp {
+                    font-size: 24rem;
+                    padding-bottom: 18rem;
+                }              
             }
             .__subttl {
                 font-family: YuGothic;
@@ -525,6 +849,11 @@
                 line-height: 25.85px;          
                 color: #404040;
                 padding-bottom: 53px;
+                @include media-sp {
+                    font-size: 14rem;
+                    padding-bottom: 53rem;
+                    line-height: 2.5;
+                }
             }
             .__wrap {
                 .__wrap-ttl {
@@ -537,6 +866,9 @@
                     width: max-content;
                     margin: 0 auto;
                     position: relative;
+                    @include media-sp {
+                        font-size: 20rem;
+                    }
                     &::after {
                         content: "";
                         position: absolute;
@@ -545,6 +877,11 @@
                         width: 530px;
                         height: 1px;
                         background: #707070;
+                        @include media-sp {
+                            left: -30rem;
+                            bottom: -20rem;
+                            width: 530rem;
+                        }
                     }
                 }
                 .__wrap-items {
@@ -552,12 +889,19 @@
                     gap: 25px;
                     justify-content: center;
                     align-items: flex-end;
+                    @include media-sp {
+                        gap: 25rem;
+                    }
                     .__wrap-item {
                         padding-top: 58px;
                         display: flex;
                         justify-content: center;
                         align-items: flex-end;
                         gap: 35px;
+                        @include media-sp {
+                            padding-top: 58rem;
+                            gap: 35rem;
+                        }
                         .__wrap-icon {
                             display: flex;
                             flex-direction: column;
@@ -567,6 +911,10 @@
                                 align-items: center;
                                 gap: 24px;
                                 padding-bottom: 16px;
+                                @include media-sp {
+                                    font-size: 24rem;
+                                    padding-bottom: 16rem;
+                                }
                                 .__text-number {
                                     @include  flex-hc-vc;
                                     width: 43px;
@@ -576,8 +924,13 @@
                                     font-weight: normal;
                                     font-size: 25px;
                                     text-align: center;
-                                    color: #696459;                            
-                                }
+                                    color: #696459; 
+                                    @include media-sp {
+                                        width: 43rem;
+                                        height: 43rem;
+                                        font-size: 25rem;
+                                    }                           
+                                }                                
                             }
                             .__wrap-subttl {
                                 font-family: YuGothic;
@@ -590,26 +943,30 @@
                                 flex-direction: column;
                                 align-items: center;
                                 min-width: max-content;
+                                @include media-sp {
+                                    font-size: 14rem;
+                                    line-height: 1.5;
+                                }
                                 .wrap-color {                                 
                                     font-family: YuGothic;
                                     font-weight: bold;
                                     font-size: 14px;
                                     line-height: 25.85px;
                                     text-align: center;
-                                    color: #EB7466;
-                                }
-                                span {
-                                    font-family: YuGothic;
-                                    font-weight: bold;
-                                    font-size: 14px;
-                                    line-height: 25.85px;                                  
                                     color: #404040;
+                                    @include media-sp {
+                                        font-size: 14rem;
+                                        line-height: 2.5;
+                                    }
+                                }                             
+                            }
+                            .pt-10 {
+                                padding-top: 10px;
+                                @include media-sp {
+                                    padding-top: 10rem;
                                 }
                             }
-                            .pt-20 {
-                                padding-top: 10px;
-                            }
-                        }                        
+                        }                                      
                     }
                 }
                 .__wrap-btn {
@@ -628,7 +985,13 @@
                     height: 93px;
                     background: #ea6a54;  
                     border-radius: 10px;
-                    position: relative;                   
+                    position: relative;  
+                    @include media-sp {
+                        margin-top: 55rem;
+                        font-size: 28rem;
+                        width: 500rem;
+                        height: 93rem;
+                    }                 
                     &::after {
                         content: "";
                         position: absolute;
@@ -638,6 +1001,9 @@
                         transform: translateY(-50%);
                         width: 10px;
                         height: 19px;
+                        @include media-sp {
+                            right: 30rem;
+                        }
                     }
                 }
             }
@@ -649,7 +1015,11 @@
         padding-left: 240rem;
         padding-right: 240rem;
         padding-top: 107px;
-        padding-bottom: 98px;
+        padding-bottom: 98px;  
+        background: #fafafa;
+        @include media-sp {
+            padding: 120rem 20px 49rem 20px;
+        }   
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -661,6 +1031,10 @@
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+                font-size: 34rem;
+                padding-bottom: 9rem;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -669,9 +1043,13 @@
                 background: url(../img/star.png);
                 background-size: 100% 100%;
                 width: 27px;
-                height: 27px;
+                height: 27px; 
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }               
             }
-            }        
+        }        
         &__subttl {
             font-family: Arial Hebrew;
             font-weight: bold;
@@ -679,7 +1057,10 @@
             letter-spacing: 0.12em;       
             text-align: center;
             color: #fba443;
-            padding-bottom: 65px;
+            padding-bottom: 132rem;
+            @include media-sp {
+                font-size: 16rem;
+            }
         }
         &__contents {
             display: flex;
@@ -687,8 +1068,14 @@
             align-items: flex-start;
             flex-wrap: wrap;
             gap: 109px 40px;
+            @include media-sp {
+                gap: 55rem 20rem;
+            }
             .__item {
                 width: calc((100% - 120px) / 4);
+                @include media-sp {
+                    width: calc((100% - 20rem) / 2);
+                }
                 figure {
                     display: flex;
                     align-items: center;
@@ -704,13 +1091,14 @@
                     font-size: 16px;
                     line-height: 27px;               
                     color: #696459;
-                    span {
-                        font-family: YuGothic;
-                        font-weight: bold;
-                        font-size: 16px;
-                        line-height: 27px;               
-                        color: #696459;
+                    @include media-pc {
+                        font-size: 16rem;
                     }
+                    @include media-sp {
+                        font-size: 16rem;
+                        padding-top: 40rem;
+                        line-height: 2;
+                    }                    
                 }
             }
 
@@ -719,6 +1107,11 @@
     .p-case {
         padding-top: 100px;
         padding-bottom: 137px;
+        background: #f4ede5; 
+        @include media-sp{
+            padding-top: 50rem;
+            padding-bottom: 68rem;
+        }    
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -730,6 +1123,10 @@
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+                font-size: 34rem;
+                padding-bottom: 5rem;
+            }
                 &::before {
                     content: "";
                     position: absolute;
@@ -739,6 +1136,10 @@
                     background-size: 100% 100%;
                     width: 27px;
                     height: 27px;
+                    @include media-sp {
+                        top: -10rem;
+                        left: -34rem;
+                    }
                 }
         }       
         &__subttl {
@@ -747,18 +1148,35 @@
             font-size: 16px;
             letter-spacing: 0.12em;        
             text-align: center;
-            color: #fba443;
-            padding-bottom: 65px;
+            color: #fba443;   
+            @include media-sp {
+                font-size: 16rem;            
+            }
         }
         &__contents {
             padding-left: 176rem;
             padding-right: 176rem;
-            padding-top: 53px;
+            padding-top: 53rem;
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 140px;
+            gap: 100rem;
+            @include media-pc {
+                gap: 40rem;
+            }
+            @include media-sp {
+                padding-left: 20px;
+                padding-right: 20px;
+                padding-top: 27rem;              
+            }
             .__item {  
-                width: calc((100% - 298px) / 3);
+                width: calc((100% - 200rem) / 3);
+                @include media-pc {
+                    width: calc((100% - 80rem) / 3);
+                }
+                @include media-sp {
+                    width: 100%;
+                }
                 figure {
                     img {
                         width: 100%;
@@ -770,7 +1188,14 @@
                     font-size: 24px;
                     text-align: center;
                     color: #696459;
-                    padding-bottom: 25px;
+                    padding-bottom: 25px; 
+                    @include media-pc {
+                        font-size: 24rem;
+                    }                   
+                    @include media-sp {
+                        font-size: 24rem;
+                        padding-bottom: 25rem;
+                    }
                 }
                 &-before {
                     padding-top: 5px;
@@ -779,13 +1204,28 @@
                     font-size: 21px;
                     text-align: center;
                     color: #787471;
+                    @include media-sp {
+                        font-size: 21rem;
+                        padding-top: 5rem;
+                    }
                 }
                 &-center {
                     padding-top: 8px;
                     text-align: center;
+                    width: 100px;
+                    height: 30px;
+                    margin: 0 auto;
+                    @include media-sp {
+                        padding-top: 8rem;
+                        width: 100rem;
+                        height: 30rem;
+                    }
                 }
                 .item__after {
                     padding-top: 12px;
+                    @include media-sp {
+                        padding-top: 12rem;
+                    }
                 }
                 &-after {
                     padding-top: 5px;
@@ -794,17 +1234,28 @@
                     font-size: 21px;
                     text-align: center;
                     color: #787471;
+                    @include media-sp {
+                        font-size: 21rem;
+                        padding-top: 5rem;
+                    }
                 }
                 &-ttl {
                     padding-top: 29px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
+                    @include media-sp {                    
+                        padding-top: 29rem;
+                    }
                     .__item-flex {
                         display: flex;
                         align-items: center;
                         gap: 15px;
                         padding-bottom: 12px;
+                        @include media-sp {
+                            gap: 15rem;
+                            padding-bottom: 12rem;
+                        }
                         .__item-color {
                             @include flex-hc-vc;
                             width: 74px;
@@ -815,12 +1266,20 @@
                             font-weight: bold;
                             font-size: 13px;                   
                             color: #696459;
+                            @include media-sp {
+                                width: 82rem;
+                                height: 30rem;
+                                font-size: 17rem;
+                            }
                         }
                         .__date {
                             font-family: YuGothic;
                             font-weight: 500;
                             font-size: 15px;                         
                             color: #000;
+                            @include media-sp {
+                                font-size: 17rem;
+                            }
                         }
                         .__item-wrap {
                             @include flex-hc-vc;
@@ -833,24 +1292,40 @@
                             font-weight: bold;
                             font-size: 13px;                          
                             color: #696459;
+                            @include media-sp {
+                                width: 180rem;
+                                height: 45rem;
+                                font-size: 22rem;
+                            }
                         }
                         .__price {
                             font-family: YuGothic;
                             font-weight: 500;
-                            font-size: 15px;
-                            text-align: left;
-                            color: #000;
+                            font-size: 15px;                     
+                            color: #000; 
+                            @include media-pc {
+                                font-size: 17rem;
+                            }                       
+                            @include media-sp {
+                                font-size: 25rem;
+                            }
                         }
                     }
-
                 }
-
             }
         }
     }
     .p-healing {
-        padding-top: 50px;
-        padding-bottom: 100px;
+        padding-top: 108rem;
+        padding-bottom: 102rem;
+        max-width: 1140px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        @include media-sp {
+            padding: 25rem 20px 50rem 20px;
+        }    
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -862,6 +1337,10 @@
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+                font-size: 34rem;
+                padding-bottom: 5rem;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -871,6 +1350,10 @@
                 background-size: 100% 100%;
                 width: 27px;
                 height: 27px;
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }
             }
         }      
         &__subttl {
@@ -879,27 +1362,40 @@
             font-size: 16px;
             letter-spacing: 0.12em;        
             text-align: center;
-            color: #fba443;
-            padding-bottom: 65px;
+            color: #fba443;        
+            @include media-sp {
+                font-size: 16rem;
+                padding-bottom: 65rem;
+            }
         }
         &__contents {
             @include flex-hc-vc;
-            padding-left: 151rem;
-            padding-right: 151rem;
-            padding-top: 56px;
+            flex-wrap: wrap;
+            padding-top: 56rem;
             display: flex;
             align-items: flex-start;
-            gap: 29px;
+            gap: 29rem;
+            @include media-sp{
+                gap: 20px;
+                padding-top: 28rem;
+            }
             .__item {
+                width: calc((100% - 87rem) / 4);
+                @include media-sp{
+                    width: calc(50% - 10px);
+                }
                 &-healing {
                    position: relative;
+                   img{
+                    width: 100%;
+                   }
                 }
                 &-color {
+                    @include flex-hc-vc;
                     position: absolute;
                     bottom: -20px;
                     left: 50%;
-                    transform: translateX(-50%);
-                    @include flex-hc-vc;
+                    transform: translateX(-50%);                    
                     width: 43px;
                     height: 44px;
                     border-radius: 3px;
@@ -909,6 +1405,29 @@
                     font-size: 25px;
                     text-align: center;
                     color: #fff;
+                    @include media-sp {
+                        font-size: 25rem;
+                        width: 43rem;
+                        height: 44rem;
+                        bottom: -20rem;
+                    }
+                }
+                .__image-text {
+                    position: absolute;
+                    top: 50%;
+                    left: 24px;
+                    transform: translateY(-50%);
+                    font-family: Marcellus,serif;
+                    font-weight: normal;
+                    font-size: 30px;
+                    line-height: 25.85px;
+                    text-align: center;
+                    color: #787471;
+                    opacity: 0.4;
+                    @include media-sp {
+                        font-size: 30rem;
+                        left: 70rem;
+                    }
                 }
                 .__ttl {
                     font-family: YuMincho;
@@ -917,16 +1436,23 @@
                     line-height: 27.85px;               
                     color: #635146;
                     padding-top: 53px;
+                    @include media-sp {
+                        font-size: 22rem;
+                        padding-top: 40rem;
+                    }
                 }
                 .__subttl {
-                    width: 246px;
-                    height: 160px;
                     font-family: YuGothic;
                     font-weight: 500;
                     font-size: 15px;
                     line-height: 26px;            
                     color: #635146;
                     padding-top: 21px;
+                    @include media-sp {
+                        font-size: 15rem;
+                        padding-top: 21rem;
+                        line-height: 2.5;
+                    }
                 }
             }
                
@@ -936,32 +1462,86 @@
         background: url(../img/orthodontist.jpg);
         background-size: cover;
         width: 100%;
-        height: 1160px;
-        padding-top: 111px;       
+        background-position: center;       
+        padding-top: 111rem;  
+        padding-bottom: 113rem;
+        @include media-sp {
+            padding-top: 55rem;
+        }     
         &__ttl {
             font-family: YuMincho;
             font-weight: 600;
             font-size: 45px;
             letter-spacing: 0.1em;
-            line-height: 67.95px;
-            text-align: center;
+            line-height: 67.95px;           
             color: #696459;
-            padding-bottom: 80px;
+            margin-bottom: 103rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 70rem;
+                width: 1px;
+                height: 32px;
+                background: transparent;
+                background: #8c8474;
+                transform: translateX(-50%);
+                @include media-sp {
+                    top: 35rem;
+                }
+            }
+            @include media-pc {
+                font-size: 45rem;
+            }
+            @include media-sp {
+                font-size: 40rem;
+                padding-bottom: 52rem;   
+            }
         }
         &__contents {
-            padding-left: 172rem;
-            padding-right: 172rem;
+            padding-left: 150rem;
+            padding-right: 150rem;
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+            }
             .__wrap {
                 display: flex;
+                flex-wrap: wrap;
                 align-items: flex-start;
-                gap: 140px;
+                gap: 100rem;
+                @include media-sp {
+                    gap: 10rem;
+                }
                 .__items {
-                    width: calc((100% - 140px) / 2);
+                    width: calc((100% - 100rem) / 2);
+                    @include media-sp {
+                        width: 100%;                    
+                    }
                     .__wrap-item {
                         padding-bottom: 60px;                        
                         display: flex;
                         align-items: center;                                             
                         gap: 21px;
+                        border-radius: 10px;
+                        background: #fff;
+                        padding-top: 20rem;
+                        padding-left: 20rem;
+                        padding-bottom: 24rem;
+                        padding-right: 48rem;
+                        margin-bottom: 61rem;
+                        @include media-sp {
+                            padding-top: 10rem;
+                            padding-left: 10rem;
+                            padding-bottom: 12rem;
+                            padding-right: 24rem;
+                            margin-bottom: 30rem;
+                            width: 100%;
+                        }
                         .item__ttl {
                             @include flex-hc-vc;
                             min-width: 76px;
@@ -974,7 +1554,12 @@
                             letter-spacing: 0.02em;
                             line-height: 21.75px;                     
                             color: #fba443;
-                            border: 0.5px solid #fba443;
+                            border: 0.5px solid #fba443;                            
+                            @include media-sp {
+                                min-width: 76rem;
+                                height: 76rem;
+                                font-size: 21rem;
+                            }
                         }
                         .item__subttl {                        
                             font-family: YuGothic;
@@ -985,38 +1570,58 @@
                             display: flex;
                             flex-direction: column;
                             justify-content: flex-start;
-                            span {
-                                font-family: YuGothic;
-                                font-weight: bold;
-                                font-size: 16px;
-                                line-height: 25.85px;                    
-                                color: #635146;
+                            @include media-pc {
+                                font-size: 16rem;
+                                line-height: 2.5;
                             }
+                            @include media-sp {                      
+                                font-size: 14rem;
+                                line-height: 2;
+                            }                        
+                        }
+                        .font-normal {
+                            font-weight: normal;
                         }
                     }
                 }
             }
-        }
-        .more__btn {
-            padding-left: 150rem;
-            padding-right: 150rem;
-            font-family: YuMincho;
-            font-weight: 600;
-            font-size: 24px;
-            line-height: 46px;         
-            color: #635146;
-            @include flex-hc-vc;
-            width: 1098px;
-            height: 151px;
-            background: transparent;
-            border: 1px solid #c2b3a0;
-            margin: 0 auto;  
-            margin-top: 20px;
-        }
+            .more__btn {  
+                @include flex-hc-vc;  
+                border: 1px solid #c2b3a0; 
+                padding-left: 229rem;
+                padding-right: 223rem; 
+                padding-top: 35rem;
+                padding-bottom: 37rem;
+                @include media-sp {
+                    padding-left: 20rem;
+                    padding-right: 20rem;
+                    padding-top: 20rem;
+                    padding-bottom: 20rem;                    
+                }
+                .__more-view {
+                    max-width: 646rem;
+                    font-family: YuMincho;
+                    font-weight: 600;
+                    font-size: 24px;
+                    line-height: 46px;         
+                    color: #635146;                       
+                    background: transparent; 
+                    @include media-sp {                  
+                        font-size: 24rem;                                          
+                        line-height: 2;
+                    }   
+                }             
+            }
+        }       
         .__view {
             padding-left: 58rem;
             padding-right: 27rem;
             padding-top: 88px;
+            @include media-sp {
+                padding-left: 10rem;
+                padding-right: 10rem;
+                padding-top: 40rem;
+            }
             .view__line {
                 display: flex;
                 align-items: center;
@@ -1024,17 +1629,24 @@
                 font-family: YuMincho;
                 font-weight: 500;
                 font-size: 28px;
-                letter-spacing: -0.02em;
-                line-height: 115.59px;                
-                color: #fff;
-                width: 500px;
-                height: 93px;
+                letter-spacing: -0.02em;                       
+                color: #fff;              
                 background: #ea6a54;  
                 border-radius: 10px;
                 position: relative; 
                 margin: 0 auto;
+                width: 500px;
+                height: 93px;
+                @include media-sp {  
+                    font-size: 25rem;
+                    width: 500rem;
+                    height: 93rem;
+                }
                 span {
                     font-size: 34px;
+                    @include media-sp{
+                        font-size: 30rem;
+                    }
                 }
                 &::after {
                     content: "";
@@ -1045,13 +1657,20 @@
                     transform: translateY(-50%);
                     width: 10px;
                     height: 19px;
+                    @include media-sp {
+                        right: 30rem;                        
+                    }
                 }
             }
         }
     }
     .p-plan {
-        padding-top: 100px;
-        padding-bottom: 100px;
+        padding-top: 91rem;
+        padding-bottom: 96rem;
+        @include media-sp {
+            padding-top: 50rem;
+            padding-bottom: 50rem;               
+        }    
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1059,10 +1678,14 @@
             letter-spacing: 0.12em;           
             color: #696459;
             text-align: center;
-            padding-bottom: 9px;
+            padding-bottom: 10rem;
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+               font-size: 34rem;
+               padding-bottom: 9rem;
+            }    
             &::before {
                 content: "";
                 position: absolute;
@@ -1072,6 +1695,10 @@
                 background-size: 100% 100%;
                 width: 27px;
                 height: 27px;
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }
             }
         }      
         &__subttl {
@@ -1081,22 +1708,46 @@
             letter-spacing: 0.12em;        
             text-align: center;
             color: #fba443;
-            padding-bottom: 65px;
+            padding-bottom: 66rem;
+            @include media-sp {
+                font-size: 16rem;
+                padding-bottom: 32rem;
+            }
         }
         &__contents {
             padding-left: 165rem;
-            padding-right: 165rem;
-            padding-top: 66px;
+            padding-right: 165rem;        
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 60px 60px;
+            gap: 60rem 60rem;
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+                padding-top: 33rem;
+            }
             .__wrap {
-                width: calc((100% - 60px) / 2);
-                padding-top: 45px;
-                padding-left: 70px;
-                padding-right: 70px;
-                padding-bottom: 57px;
+                width: calc((100% - 60rem) / 2);              
+                padding-top: 45rem;
+                padding-left: 63rem;
+                padding-right: 62rem;
+                padding-bottom: 57rem;            
+                border-radius: 10px;
+                background: transparent;
+                border: 5px solid #efe9e7;
+                @include media-pc {                  
+                    padding-top: 45rem;
+                    padding-bottom: 57rem;
+                    padding-left: 70rem;
+                    padding-right: 70rem;
+                }                
+                @include media-sp {
+                    width: 100%;
+                    padding-top: 22rem;
+                    padding-bottom: 28rem;
+                    padding-left: 35rem;
+                    padding-right: 35rem;
+                }
                 .__wrap-ttl {                 
                     font-family: "Noto Serif JP",serif;
                     font-weight: 600;
@@ -1107,15 +1758,20 @@
                     display: flex;
                     flex-direction: column;
                     align-items: center;
-                    padding-bottom: 22px;
-                    span {
-                        font-family: "Noto Serif JP",serif;
-                        font-weight: 600;
-                        font-size: 36px;
-                        line-height: 46px;
-                        text-align: center;
-                        color: #fba443;
+                    padding-bottom: 22px; 
+                    @include media-pc {
+                        font-size: 27rem;
+                        line-height: 2;
+                        padding-bottom: 20rem;
                     }
+                    @include media-sp {
+                        font-size: 34rem;
+                        padding-bottom: 22rem;
+                        line-height: 2;
+                    }  
+                    span {
+                        font-size: 31px;
+                    }                
                 }
                 .__wrap-price {
                     font-family: "Noto Serif JP",serif;
@@ -1123,13 +1779,21 @@
                     font-size: 27px;
                     text-align: center;
                     color: #696459;
+                    @include media-pc {
+                        font-size: 23rem;
+                    }
+                    @include media-sp {
+                        font-size: 27rem;
+                    }
                 }
                 .__wrap-text {
                     display: flex;
                     flex-direction: column;
                     align-items: center;
+                    padding-top: 3rem;
                     .__text-contents {
                         display: flex;
+                        align-items: center;
                         .__text-ttl {
                             font-family: "Noto Serif JP",serif;
                             font-weight: normal;
@@ -1137,15 +1801,20 @@
                             line-height: 25px;                      
                             color: #4a2e2e;
                             display: flex;
-                            flex-direction: column;
-                            padding-top: 22px;
-                            span {
-                                font-family: "Noto Serif JP",serif;
-                                font-weight: normal;
-                                font-size: 23px;
-                                line-height: 25px;                      
-                                color: #4a2e2e;
-                            }
+                            flex-direction: column;                     
+                            padding-bottom: 17rem;
+                            @include media-pc {
+                                font-size: 22rem;
+                                padding-top: 22rem;
+                                line-height: 2;
+                                padding-bottom: 10rem;;
+                            }       
+                            @include media-sp {
+                                font-size: 23rem;
+                                padding-top: 22rem;
+                                line-height: 2;
+                                padding-bottom: 10rem;
+                            }                      
                         }
                         .__text-number {
                             font-family: "Libre Baskerville",serif;
@@ -1153,6 +1822,22 @@
                             font-size: 60px;
                             letter-spacing: -0.06em;
                             color: #4a2e2e;
+                            @include media-pc {
+                                font-size: 50rem;
+                            }
+                            @include media-sp {
+                                font-size: 60rem;
+                            }
+                            span {
+                                font-size: 28px;
+                                @include media-pc {
+                                    font-size: 28rem;
+                                }
+                                @include media-sp {
+                                    font-size: 28rem;
+                                }
+                            }
+                          
                         }
                     }
                     .__text-subttl {
@@ -1163,14 +1848,10 @@
                         color: #755b38;
                         display: flex;
                         flex-direction: column;
-                        span {
-                            font-family: YuGothic;
-                            font-weight: 500;
-                            font-size: 11px;
-                            line-height: 17px;                         
-                            color: #755b38;
-                        }
-
+                        @include media-sp {
+                            font-size: 17rem;
+                            line-height: 2;
+                        }   
                     }
                 }
                 .__wrap-bgttl {
@@ -1181,6 +1862,15 @@
                     line-height: 27px;
                     text-align: center;
                     color: #696459;
+                    @include media-pc {
+                        font-size: 16rem;
+                        line-height: 2;
+                        padding-top: 24rem;
+                    }
+                    @include media-sp {
+                        font-size: 16rem;
+                        padding-top: 24rem;
+                    }
                 }
                 .__wrap-subttl {                
                     font-family: YuGothic;
@@ -1189,44 +1879,83 @@
                     line-height: 28px;                 
                     color: #635146;
                     padding-top: 18px;
+                    @include media-pc {
+                        font-size: 24rem;
+                        line-height: 2;
+                        padding-top: 18rem;
+                    }
+                    @include media-sp {
+                        font-size: 24rem;
+                    }
                 }    
                 .__wrap-items {
                     padding-top: 23px;
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start;
+                    @include media-pc {
+                        padding-top: 23rem;
+                    }
+                    @include media-sp {
+                        padding-top: 23rem;
+                    }
                     span {
                         font-family: YuGothic;
                         font-weight: 500;
                         font-size: 12px;
                         line-height: 17px;                      
                         color: #696459;
+                        @include media-pc {
+                            font-size: 22rem;
+                            line-height: 2;
+                        }
+                        @include media-sp {
+                            font-size: 22rem;
+                            line-height: 2;
+                        }
                     }
                 }            
             }
             .__wrap-age {
-                padding-top: 109px;
-                padding-bottom: 72px;
-                display: flex; 
-                align-items: center;
-                justify-content: center;
-                width: 100%;             
+                @include flex-hc-vc;
+                margin-top: 21rem;
+                margin-bottom: -10rem;              
+                width: 100%;  
+                border-radius: 40px;
+                background: #f5aca3;             
+                padding-top: 22rem;
+                padding-bottom: 22rem;  
+                @include media-sp {
+                    padding-top: 55rem;
+                    padding-bottom: 36rem;
+                }        
                 .__age-text {
                     font-family: YuGothic;
                     font-weight: bold;
                     font-size: 27px;
-                    letter-spacing: 0.16em;
-                    line-height: 67.95px;
-                    text-align: center;
+                    letter-spacing: 0.16em; 
                     color: #958b83;
-                    padding-right: 73px;
+                    padding-right: 73rem;
+                    @include media-sp {
+                        font-size: 27rem;
+                        padding-right: 73rem;
+                    }
                 }
             }
         }
     }
-    .p-question {
-        padding-top: 100px;
-        padding-bottom: 100px;
+    .p-question {       
+        padding-top: 119rem;
+        padding-bottom: 118rem;
+        background: #fafafa;  
+        @include media-pc {
+            padding-top: 100rem;
+            padding-bottom: 100rem;
+        }  
+        @include media-sp {
+            padding-top: 50rem;
+            padding-bottom: 50rem;
+        }
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1234,10 +1963,18 @@
             letter-spacing: 0.12em;           
             color: #696459;
             text-align: center;
-            padding-bottom: 9px;
+            padding-bottom: 10rem;
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-pc {             
+                padding-bottom: 9rem;
+                font-size: 34rem;
+            }  
+            @include media-sp {
+                padding-bottom: 5rem;
+                font-size: 30rem;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -1247,6 +1984,10 @@
                 background-size: 100% 100%;
                 width: 27px;
                 height: 27px;
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }
             }
         }      
         &__subttl {
@@ -1255,25 +1996,45 @@
             font-size: 16px;
             letter-spacing: 0.12em;        
             text-align: center;
-            color: #fba443;
-            padding-bottom: 65px;
+            color: #fba443;    
+            @include media-pc {             
+                padding-bottom: 65rem;
+                font-size: 16rem;
+            }  
+            @include media-sp {
+                padding-bottom: 65rem;
+                font-size: 16rem;
+            }
         }
         &__contents {
-            padding-left: 140rem;
-            padding-right: 140rem;
-            padding-top: 100px;
+            padding-left: 141rem;
+            padding-right: 167rem;
+            padding-top: 72rem;
             display: flex;         
             flex-wrap: wrap;
-            gap: 100px 104px;
+            gap: 142rem 104rem;
+            @include media-pc {             
+                padding-left: 140rem;
+                padding-right: 140rem;
+                padding-top: 100rem;
+                gap: 80rem 84rem;
+            }  
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+                padding-top: 50rem;
+                gap: 50rem 52rem;
+            }
             .__items {
-                width: calc((100% - 104px) / 2);
+                width: calc((100% - 104rem) / 2);               
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
-                padding: 30px 0;
-                border-bottom: solid 1px #DDDDDD;
-                  &:first-child{
-                    border-top: solid 1px #DDDDDD;
+                padding: 30px 0;               
+                    @include media-sp {
+                        width: 100%;
+                        padding: 30rem 0;
+                    }                  
                 }        
                 .__inner-items {
                     display: flex;
@@ -1281,6 +2042,14 @@
                     align-items: center;
                     gap: 27px;
                     padding-right: 100px;
+                    @include media-pc {
+                        gap: 27rem;
+                        padding-right: 100rem;
+                    }
+                    @include media-sp {
+                        gap: 27rem;
+                        padding-right: 50rem;
+                    }                   
                     &--answer{
                         padding-top: 20px;
                         padding-bottom: 20px;
@@ -1312,11 +2081,16 @@
                     }                                   
                 }  
           }
-        }
+     
         &__view {
             padding-left: 58rem;
             padding-right: 27rem;
-            padding-top: 88px;
+            padding-top: 209rem;
+            @include media-sp {
+                padding-left: 29rem;
+                padding-right: 14rem;
+                padding-top: 44rem;
+            }
             .view__line {
                 display: flex;
                 align-items: center;
@@ -1324,8 +2098,7 @@
                 font-family: YuMincho;
                 font-weight: 500;
                 font-size: 28px;
-                letter-spacing: -0.02em;
-                line-height: 115.59px;                
+                letter-spacing: -0.02em;                       
                 color: #fff;
                 width: 500px;
                 height: 93px;
@@ -1333,8 +2106,24 @@
                 border-radius: 10px;
                 position: relative; 
                 margin: 0 auto;
+                @include media-pc {
+                    font-size: 28rem;
+                    width: 500rem;
+                    height: 93rem;
+                }
+                @include media-sp {
+                    font-size: 28rem;
+                    width: 500rem;
+                    height: 93rem;
+                }
                 span {
                     font-size: 34px;
+                    @include media-pc {
+                        font-size: 32rem;
+                    }
+                    @include media-sp {
+                        font-size: 32rem;
+                    }
                 }
                 &::after {
                     content: "";
@@ -1345,151 +2134,424 @@
                     transform: translateY(-50%);
                     width: 10px;
                     height: 19px;
+                    @include media-sp {
+                        right: 30rem;
+                    }
                 }
             }
         }
     }
     .p-intro {
-        padding-top: 100px;       
-        &__ttl {    
-            font-family: YuMincho;
-            font-weight: 600;
-            font-size: 45px;
-            letter-spacing: 0.1em;
-            line-height: 67.95px;
-            text-align: center;
-            color: #696459;
-            width: max-content;
-            position: relative;
-            margin: 0 auto;
-            margin-bottom: 130px;
-            &::after {
-                content: "";
-                position: absolute;
-                left: 50%;
-                bottom: -40px;                
-                height: 32px;
-                background: #8c8474;
-                width: 1px;
-            }
+        padding-top: 100px;         
+        @include media-sp {
+            padding-top: 50rem;
         }
-        &__contents {
-            .__inner {
-                padding-left: 113rem;
-                padding-right: 104rem;
-                display: flex;
-                align-items: center;
-                gap: 122rem;
-                .__inner-img {
-                    display: flex;
-                    flex-direction: column;
+        &__container {
+            padding-left: 90rem;
+            padding-right: 90rem;
+            &__ttl {    
+                font-family: YuMincho;
+                font-weight: 600;
+                font-size: 45px;
+                letter-spacing: 0.1em;        
+                text-align: center;
+                color: #696459;
+                width: max-content;
+                position: relative;
+                margin: 0 auto;
+                margin-bottom: 130px;
+                @include media-pc {
+                    font-size: 45rem;
+                    margin-bottom: 130rem;
+                }
+                @include media-sp {
+                    font-size: 40rem;
+                    margin-bottom: 65rem;
+                }
+                &::after {
+                    content: "";
+                    position: absolute;
+                    left: 50%;
+                    bottom: -40px;                
+                    height: 32px;
+                    background: #8c8474;
+                    width: 1px;            
+                    @include media-sp {
+                        height: 32rem;
+                        bottom: -40rem; 
+                    }
+                }
+            }
+            &__contents {
+                @include media-sp {
+                    padding-left: 20rem;
+                    padding-right: 20rem;
+                }
+                .__inner-item {
+                    display: flex;  
+                    flex-wrap: wrap;               
                     align-items: flex-end;
-                    gap: 65px;
-                } 
-                .__inner-text {
-                    display: flex;
-                    flex-direction: column;
-                    justify-content: flex-start;
-                    .__bgttl {                       
-                        font-family: YuMincho;
-                        font-weight: 500;
-                        font-size: 18px;
-                        letter-spacing: 0.1em;
-                        line-height: 50.85px;                        
-                        color: #404040;
+                    justify-content: space-between;
+                    figure {
+                        width: 450rem;
+                        @include media-sp {
+                            width: 100%;
+                            justify-content: flex-start;
+                        }
+                    }                  
+                    .__inner-text {
+                        width: calc(100% - 570rem);
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        .fs-36 {
-                            font-size: 36px;
+                        padding-bottom: 22rem;
+                        background: #fcfcfc;
+                        @include media-sp {
+                            width: 100%;
+                        }
+                        .__bgttl {                       
                             font-family: YuMincho;
                             font-weight: 500;
+                            font-size: 18px;
+                            letter-spacing: 0.1em;                                        
+                            color: #404040;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            position: relative;
+                            margin-top: 20rem;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: -10px;
+                                left: 0;
+                                width: 326rem;
+                                height: 1px;
+                                background: rgba(120, 116, 113, 0.42);
+                            }
+                            @include media-pc {
+                                font-size: 18rem;
+                            }
+                            @include media-sp {
+                                font-size: 16rem;
+                            }
+                            .fs-36 {
+                                font-size: 36px;
+                                font-family: YuMincho;
+                                font-weight: 500;
+                                letter-spacing: 0.1em;
+                                line-height: 50.85px;                        
+                                color: #404040;
+                                @include media-pc {
+                                    font-size: 36rem;
+                                }
+                                @include media-sp {
+                                    font-size: 30rem;
+                                }
+                            }
+                            span {
+                                font-family: Marcellus,serif;
+                                font-weight: normal;
+                                font-size: 11px;
+                                letter-spacing: 0.12em;                                       
+                                color: #fba443;
+                                padding-top: 15px;
+                                @include media-pc {
+                                    font-size: 11rem;
+                                    padding-top: 15rem;
+                                }
+                                @include media-sp {
+                                    font-size: 11rem;
+                                    padding-top: 15rem;
+                                }
+                            }    
+                        }
+                        .__biography {
+                            width: 49px;
+                            height: 26px;
+                            border-radius: 5px;
+                            background: #e9e3d3;
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 14px;
+                            letter-spacing: 0.04em;
+                            line-height: 26.38px;                  
+                            color: #696459;
+                            margin-top: 50rem;
+                            @include flex-hc-vc; 
+                            @include media-pc {
+                                width: 49rem;
+                                height: 26rem;
+                                font-size: 14rem;
+                            }
+                            @include media-sp {
+                                width: 49rem;
+                                height: 26rem;
+                                font-size: 14rem;
+                            }
+                        }
+                        .__subttl {
+                            display: flex;
+                            align-items: flex-end;
+                            gap: 65rem;  
+                            @include media-pc {
+                                gap: 60rem;  
+                            }
+                            @include media-sp {
+                                gap: 20rem;  
+                            }                 
+                            .bio__ttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 31.85px;                      
+                                color: #404040;
+                                width: 50px;
+                                padding-top: 16rem;
+                                @include media-pc {
+                                    font-size: 14rem;
+                                    padding-top: 17rem;
+                                    width: 50rem;
+                                }
+                                @include media-sp {
+                                    font-size: 14rem;
+                                    padding-top: 17rem;
+                                    width: 50rem;
+                                }                 
+                            }
+                            .bio__subttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 31.85px;
+                                color: #404040;
+                                @include media-pc {
+                                    font-size: 15rem;                              
+                                }
+                                @include media-sp {
+                                    font-size: 16rem;                             
+                                }                 
+                            }
+                        }      
+                    }   
+                }    
+                .__outer-item {
+                    display: flex;
+                    align-items: flex-start;
+                    flex-wrap: wrap;
+                    margin-top: 65rem;      
+                    justify-content: space-between;
+                    figure {
+                        width: 450rem;
+                        justify-content: flex-end;
+                        @include media-sp {
+                            width: 100%;
+                            justify-content: flex-start;
+                        }
+                    }
+                    .__item-group {
+                        width: calc(100% - 570rem);
+                        background: #fcfcfc;
+                        @include media-sp {
+                            width: 100%;
+                        }
+                        .__item-ttl {
+                            font-family: YuMincho;
+                            font-weight: 500;
+                            font-size: 16px;
                             letter-spacing: 0.1em;
-                            line-height: 50.85px;                        
+                            line-height: 2.5;                                              
                             color: #404040;
+                            padding-bottom: 35rem;
+                            margin-top: 20rem;
                         }
-                        span {
-                            font-family: Marcellus,serif;
-                            font-weight: normal;
-                            font-size: 11px;
-                            letter-spacing: 0.12em;
-                            line-height: 67.95px;                        
-                            color: #fba443;
-                            padding-top: 15px;
-                        }
-
-                    }
-                    .__biography {
-                        width: 49px;
-                        height: 26px;
-                        border-radius: 5px;
-                        background: #e9e3d3;
-                        font-family: YuGothic;
-                        font-weight: bold;
-                        font-size: 14px;
-                        letter-spacing: 0.04em;
-                        line-height: 26.38px;                  
-                        color: #696459;
-                        @include flex-hc-vc; 
-                    }
-                    .__subttl {
-                        display: flex;
-                        align-items: flex-end;
-                        gap: 65px;                   
-                        .bio__ttl {
+                        .__item-subttl {
                             font-family: YuGothic;
                             font-weight: 500;
                             font-size: 14px;
-                            line-height: 31.85px;                      
-                            color: #404040;
-                            width: 50px;
-                            padding-top: 17px;
-                        }
-                        .bio__subttl {
-                            font-family: YuGothic;
-                            font-weight: 500;
-                            font-size: 14px;
-                            line-height: 31.85px;
+                            line-height: 2.5;                                         
                             color: #404040;
                         }
                     }
-                    .pb-117 {
-                        padding-bottom: 117px;
-                    }
-                    .__address {
-                        font-family: YuMincho;
-                        font-weight: 500;
-                        font-size: 16px;
-                        letter-spacing: 0.1em;
-                        line-height: 35.85px;                       
-                        color: #404040;
-                    }
-                    .__address-intro {
-                        font-family: YuGothic;
-                        font-weight: 500;
-                        font-size: 14px;
-                        line-height: 27.85px;                      
-                        color: #404040;
-                        padding-top: 25px;
-                    }
-                    
                 }
-
-
-            }  
-            .pt-150 {
-                padding-top: 150px;
-                padding-left: 220rem;
-                padding-right: 75rem;
-            }          
+                .__main-item {
+                    display: flex;
+                    flex-wrap: wrap-reverse;
+                    align-items: flex-end;
+                    justify-content: space-between;
+                    padding-left: 100rem;
+                    margin-top: 180rem;                    
+                    .__inner-text {
+                        background: #fcfcfc;
+                        @include media-sp {
+                            width: 100%;
+                            justify-content: flex-start;
+                        }
+                        width: calc(100% - 570rem);
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-start;
+                        padding-bottom: 22rem;
+                        .__bgttl {                       
+                            font-family: YuMincho;
+                            font-weight: 500;
+                            font-size: 18px;
+                            letter-spacing: 0.1em;                                        
+                            color: #404040;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            position: relative;
+                            margin-top: 20rem;
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: -10px;
+                                left: 0;
+                                width: 326rem;
+                                height: 1px;
+                                background: rgba(120, 116, 113, 0.42);
+                            }
+                            @include media-pc {
+                                font-size: 18rem;
+                            }
+                            @include media-sp {
+                                font-size: 16rem;
+                            }
+                            .fs-36 {
+                                font-size: 36px;
+                                font-family: YuMincho;
+                                font-weight: 500;
+                                letter-spacing: 0.1em;
+                                line-height: 50.85px;                        
+                                color: #404040;
+                                @include media-pc {
+                                    font-size: 36rem;
+                                }
+                                @include media-sp {
+                                    font-size: 30rem;
+                                }
+                            }
+                            span {
+                                font-family: Marcellus,serif;
+                                font-weight: normal;
+                                font-size: 11px;
+                                letter-spacing: 0.12em;                                       
+                                color: #fba443;
+                                padding-top: 15px;
+                                @include media-pc {
+                                    font-size: 11rem;
+                                    padding-top: 15rem;
+                                }
+                                @include media-sp {
+                                    font-size: 11rem;
+                                    padding-top: 15rem;
+                                }
+                            }    
+                        }
+                        .__biography {
+                            width: 49px;
+                            height: 26px;
+                            border-radius: 5px;
+                            background: #e9e3d3;
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 14px;
+                            letter-spacing: 0.04em;
+                            line-height: 26.38px;                  
+                            color: #696459;
+                            margin-top: 25px;
+                            @include flex-hc-vc; 
+                            @include media-pc {
+                                width: 49rem;
+                                height: 26rem;
+                                font-size: 14rem;
+                            }
+                            @include media-sp {
+                                width: 49rem;
+                                height: 26rem;
+                                font-size: 14rem;
+                            }
+                        }
+                        .__subttl {
+                            display: flex;
+                            align-items: flex-end;
+                            gap: 65rem;  
+                            @include media-pc {
+                                gap: 60rem;  
+                            }
+                            @include media-sp {
+                                gap: 20rem;  
+                            }                 
+                            .bio__ttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 31.85px;                      
+                                color: #404040;
+                                width: 50px;
+                                padding-top: 17px;
+                                @include media-pc {
+                                    font-size: 14rem;
+                                    padding-top: 17rem;
+                                    width: 50rem;
+                                }
+                                @include media-sp {
+                                    font-size: 15rem;
+                                    padding-top: 17rem;
+                                    width: 50rem;
+                                }                 
+                            }
+                            .bio__subttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 14px;
+                                line-height: 31.85px;
+                                color: #404040;
+                                @include media-pc {
+                                    font-size: 14rem;                              
+                                }
+                                @include media-sp {
+                                    font-size: 16rem;                             
+                                }                 
+                            }
+                        }     
+                        .__item-ttl {
+                            font-family: YuMincho;
+                            margin-top: 110rem;
+                            font-weight: 500;
+                            font-size: 16px;
+                            letter-spacing: 0.1em;
+                            line-height: 2.5;                                              
+                            color: #404040;
+                            padding-bottom: 35rem;
+                        }
+                        .__item-subttl {
+                            font-family: YuGothic;
+                            font-weight: 500;
+                            font-size: 14px;
+                            line-height: 2.5;                                         
+                            color: #404040;
+                        } 
+                    }   
+                    figure {
+                       width: 450rem;
+                       justify-content: flex-end;
+                       padding-top: 30rem;
+                        @include media-sp {
+                            width: 100%;
+                            justify-content: flex-start;
+                        }
+                    }
+                }      
+            }
         }
-
-
     }
     .p-dentist {
         padding-left: 150rem;
         padding-right: 150rem;
-        padding-top: 150px;
+        padding-top: 162rem;
+        padding-bottom: 127rem;
         display: flex;
         flex-wrap: wrap;   
         gap: 30px 36px;
@@ -1565,6 +2627,9 @@
                         font-size: 13px;
                         line-height: 25.85px;                   
                         color: #404040;
+                        @include media-sp {
+                            font-size: 17rem;
+                        }
                     }
                     .__subttl {
                         font-family: YuGothic;
@@ -1572,17 +2637,23 @@
                         font-size: 13px;
                         line-height: 25.85px;                   
                         color: #404040;
+                        @include media-sp {
+                            font-size: 17rem;
+                        }
                     }
                 }
             }
-        } 
-
-     
+        }    
       
     }
     .p-swiper {
-        padding-top: 200px;
-        padding-bottom: 100px;
+        padding-top: 100rem;
+        padding-bottom: 158rem; 
+        background: #fafafa;
+        @include media-sp {
+            padding-top: 100rem;
+            padding-bottom: 50rem;
+        }    
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1590,10 +2661,14 @@
             letter-spacing: 0.12em;           
             color: #696459;
             text-align: center;
-            padding-bottom: 9px;
+            padding-bottom: 10rem;
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+                font-size: 32rem;
+                padding-bottom: 9rem;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -1603,6 +2678,10 @@
                 background-size: 100% 100%;
                 width: 27px;
                 height: 27px;
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }
             }
         }      
         &__subttl {
@@ -1611,38 +2690,68 @@
             font-size: 16px;
             letter-spacing: 0.12em;        
             text-align: center;
-            color: #fba443;
-            padding-bottom: 65px;
+            color: #fba443;         
+            @include media-sp {
+                font-size: 16rem;
+            }
         }
         &__contents {
             padding-left: 300rem;
             padding-right: 300rem;
-            padding-top: 75px;
-
+            padding-top: 74rem;
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+                padding-top: 75rem;
+            }
         }
     }
     .p-equipment{
-        padding-top: 200px;
-        padding-bottom: 105px;
+        padding-top: 114rem;
+        padding-bottom: 103rem;
+        @include media-sp{
+            padding-top: 100rem;
+            padding-bottom: 57rem;
+        }
         &__ttl {
             font-family: YuMincho;
             font-weight: 600;
             font-size: 45px;
-            letter-spacing: 0.1em;
-            line-height: 67.95px;
+            letter-spacing: 0.1em;    
             text-align: center;
             color: #696459;
             padding-bottom: 105px;
+            @include media-sp{
+                font-size: 40rem;
+                padding-bottom: 57rem;
+            }
         }
         &__contents {
             @include flex-hc-vc;
             padding-left: 137rem;
             padding-right: 137rem;
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+            }
         }
     }
     .p-map {
-        padding-top: 50px;
-        padding-bottom: 100px;
+        background: #fafafa;
+        padding-top: 100rem;   
+        max-width: 840rem;
+        padding-left: 20rem;
+        padding-right: 20rem;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%;
+        @include media-sp {
+            padding-top: 25rem;
+            width: 100%;
+            padding-left: 20rem;
+            padding-right: 20rem;
+        }
+      
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1654,6 +2763,10 @@
             width: max-content;
             margin: 0 auto;
             position: relative;
+            @include media-sp {
+                font-size: 32rem;
+                padding-bottom: 9rem;
+            }
             &::before {
                 content: "";
                 position: absolute;
@@ -1663,6 +2776,10 @@
                 background-size: 100% 100%;
                 width: 27px;
                 height: 27px;
+                @include media-sp {
+                    top: -10rem;
+                    left: -34rem;
+                }
             }
         }      
         &__subttl {
@@ -1671,8 +2788,11 @@
             font-size: 16px;
             letter-spacing: 0.12em;        
             text-align: center;
-            color: #fba443;
-            padding-bottom: 65px;
+            color: #fba443;  
+            @include media-sp {
+                font-size: 16rem;
+                padding-bottom: 35rem;
+            }
         }
         &__address {
             padding-top: 60px;
@@ -1685,25 +2805,37 @@
             font-size: 27px;
             line-height: 48px;        
             color: #635146;
-            span {
-                font-family: YuMincho;
-                font-weight: 600;
-                font-size: 27px;
-                line-height: 48px;        
-                color: #635146;
+            @include media-sp {
+                padding-top: 30rem;
+                padding-bottom: 30rem;
+                font-size: 27rem;
+                line-height: 2;
             }
-
         }
         &__contents {
-            padding-left: 300rem;
-            padding-right: 300rem;
-            @include flex-hc-vc;
-            width: 100%;
+            iframe{
+                width: 100%;
+                height: 450rem;
+            }
         }
     }
-    .p-time {
-        padding-top: 88px;
-        padding-bottom: 150px;
+    .p-time {   
+        background: #fafafa;   
+        padding-top: 88rem;
+        padding-bottom: 105rem;
+        max-width: 840px;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-left: auto;
+        margin-right: auto;
+        width: 100%; 
+        @include media-sp {
+            padding-top: 44rem;
+            padding-bottom: 75rem;
+            width: 100%;
+            padding-left: 20rem;
+            padding-right: 20rem;
+        }   
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1711,80 +2843,89 @@
             line-height: 56px;
             text-align: center;
             color: #696459;
-            padding-bottom: 68px;
+            padding-bottom: 27rem;
+            @include media-sp {
+                font-size: 25rem;
+                padding-bottom: 34rem;
+            }
         }
-        &__contents {
-            padding-left: 360rem;
-            padding-right: 360rem;      
-            .__day {
-                padding-bottom: 25px;
-                display: flex;
-                align-items: center;             
-                gap: 42px;
+        table {
+            border-radius: 10px;
+            background: #fff;
+            padding-top: 41rem;
+            padding-right: 60rem;
+            padding-bottom: 43rem;
+            padding-left: 62rem;
+            th,td {
                 font-family: YuMincho;
                 font-weight: 500;
                 font-size: 22px;
-                line-height: 59px;                  
-                color: #696459;
-                .__time {
-                    font-family: YuGothic;
-                    font-weight: 500;
-                    font-size: 21px;
-                    line-height: 56px;                  
-                    color: #696459; 
-                    padding-right: 45px; 
-                    min-width: max-content;                                   
+                line-height: 59px;            
+                color: #696459;  
+                @include media-sp {
+                    font-size: 22rem;
+                } 
+                img {
+                    width: 22px;
+                    height: 22px;
+                    @include media-sp {
+                        width: 22rem;
+                        height: 22rem;
+                    }
                 }
-                .v-hidden {
-                   visibility: hidden;
-                }
-            }
-            .__wrap-time {  
-                padding-bottom: 25px;
-                gap: 43px;
-                display: flex;              
-                align-items: center;                    
-                .__time {
-                    font-family: YuGothic;
-                    font-weight: 500;
-                    font-size: 21px;
-                    line-height: 56px;                  
-                    color: #696459; 
-                    padding-right: 45px; 
-                    min-width: max-content;                                   
-                }
-                .pr-40 {
-                    padding-right: 34px;
-                }
-            }         
-        }
-        .time__intro {
+            }               
+        }   
+        .__time-table {
+            padding-top: 34rem;
+            text-align: center;
             font-family: YuGothic;
             font-weight: 500;
             font-size: 14px;
             letter-spacing: -0.03em;
-            line-height: 15px;
-            text-align: center;
-            color: #696459;  
-            padding-top: 20px;
-        }
+            line-height: 15px;     
+            color: #696459;
+        }         
     }
     .p-infor {
-        padding-top: 100px;
-        padding-left: 320rem;
-        padding-right: 320rem;
-        padding-bottom: 125px;
+        padding-top: 70rem;
+        padding-left: 280rem;
+        padding-right: 280rem;
+        padding-bottom: 84rem; 
+        @include media-sp {
+            padding-top: 50rem;
+            padding-bottom: 62rem;
+            padding-left: 20rem;
+            padding-right: 20rem;
+        }
         &__ttl {
             font-family: YuMincho;
             font-weight: 600;
             font-size: 45px;
-            letter-spacing: 0.1em;
-            line-height: 67.95px;
+            letter-spacing: 0.1em;         
             text-align: center;
             color: #696459;
-            padding-bottom: 130px;
+            padding-bottom: 87rem;
+            position: relative;
+            @include media-sp {
+                font-size: 45rem;
+                padding-bottom: 65rem;
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 50%;
+                top: 85rem;
+                transform: translateY(-50%);
+                width: 1px;            
+                height: 32px;           
+                background:#8c8474;
+            }
         }
-        &__subttl {          
+        &__subttl {    
+            padding-left: 40rem;
+            padding-right: 40rem;
+            padding-top: 43rem;
+            padding-bottom: 43rem;      
             font-family: YuGothic;
             font-weight: 500;
             font-size: 14px;           
@@ -1792,31 +2933,31 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
-            span {
-                font-family: YuGothic;
-                font-weight: 500;
-                font-size: 14px;              
-                color: #333;
-            }
+            background: #fff;
+            border: 1px solid #f4efe9;
+            @include media-sp {
+                font-size: 18rem;
+            }    
             .pt-15 {
                 padding-top: 15px;
+                @include media-sp {
+                    padding-top: 15rem;
+                }
             }
         }
     }
-
-}
-
-.p-footer {
-    background: #696459;
-    height: 60px;
-    width: 100%;
-    @include flex-hc-vc;
-    &__ttl {      
-        font-family: YuGothic;
-        font-weight: 500;
-        font-size: 14px;
-        text-align: center;
-        color: #fff;
+    .p-footer {
+        background: #696459;
+        height: 60px;
+        width: 100%;
+        @include flex-hc-vc;
+        &__ttl {      
+            font-family: YuGothic;
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            color: #fff;
+        }
     }
 }
 
