@@ -3739,9 +3739,10 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-swiper__contents {
-  padding-left: 300rem;
-  padding-right: 300rem;
+  margin-left: 300rem;
+  margin-right: 300rem;
   padding-top: 74rem;
+  position: relative;
 }
 @media screen and (max-width: 767px) {
   .p-main .p-swiper__contents {

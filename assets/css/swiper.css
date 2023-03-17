@@ -64,3 +64,20 @@ html,
           height: 100%;
           object-fit: cover;
         }
+
+        .swiper-button-next, .swiper-button-prev{
+          color: #707070 !important;
+        }
+
+        .swiper-button-next, .swiper-rtl .swiper-button-prev {
+          right: var(--swiper-navigation-sides-offset,-50px);
+          left: auto;
+          width: 30px;
+          height: 0px;
+      }
+      .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: var(--swiper-navigation-sides-offset,-50px);
+        right: auto;
+        width: 30px;
+        height: 0px;
+    }
