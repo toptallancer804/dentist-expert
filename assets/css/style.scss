@@ -7,14 +7,14 @@
 .pc-only{
     display: block;
     @include media-sp{
-        display: none;
+        display: none!important;
     }
 }
 
 .sp-only{
-    display: none;
+    display: none!important;
     @include media-sp{
-        display: block;
+        display: block!important;
     }
 }
 
@@ -30,7 +30,7 @@
         padding-bottom: 0;
     }
     @include media-sp{
-        padding: 24rem 15rem 18rem 24rem;
+        padding: 16rem 14rem 16rem 24rem;
         align-items: flex-start;
     }
     .p-items {
@@ -64,7 +64,7 @@
                 @include media-sp{
                     width: 220rem;
                     height: 84rem;
-                    font-size: 22rem;
+                    font-size: 24rem;
                     line-height: 1.2;
                     text-align: center;
                     padding: 0;
@@ -116,7 +116,7 @@
                 @include media-sp{
                     width: 220rem;
                     height: 84rem;
-                    font-size: 22rem;
+                    font-size: 24rem;
                     line-height: 1.2;
                     text-align: center;
                     padding: 0;
@@ -167,8 +167,8 @@ header{
             }
             @include media-sp{
                 justify-content: flex-start;
-                padding-left: 24rem;
-                padding-right: 11rem;
+                padding-left: 16rem;
+                padding-right: 14rem;
     
             }
         }
@@ -185,10 +185,10 @@ header{
             line-height: 26.38px;          
             color: #696459;
             @include media-sp{
-                width: 53rem;
-                height: 32rem;
-                font-size: 20rem;
-                
+                width: 56rem;
+                height: 34rem;
+                font-size: 18rem;
+                margin-bottom: 28rem;                
             }
         }
         .__item-subttl {
@@ -200,12 +200,18 @@ header{
             padding-left: 13px;
             @include media-sp{
                 font-size: 20rem;
-                padding-left: 10rem;
+                padding-left: 18rem;
+                display: flex;
+                flex-direction: column;
+                align-items: flex-end;
+                line-height: 1.5;
             }
             span{
                 font-weight: 500;
                 @include media-sp{
                     margin-left: 5rem;
+                    line-height: 13px;
+                    font-weight: 500;
                 }
             }
         }
@@ -215,8 +221,7 @@ header{
             align-items: center;
             gap: 4px;
             @include media-sp{
-                padding-left: 23rem;
-
+                padding-left: 28rem;                
             }
             .__number {
                 font-family: Marcellus,serif;
@@ -226,13 +231,14 @@ header{
                 line-height: 60.53px;                 
                 color: #635146;
                 @include media-sp{
-                    font-size: 35rem;
+                    font-size: 48rem;
+                    line-height: 45px;
                 }
             }
             figure{
                 img{
                     @include media-sp{
-                        width: 26rem;
+                        width: 40rem;
                     }
                 }
             }
@@ -242,6 +248,7 @@ header{
 
 .p-main {    
     .p-fv {
+        background: #eff2f5;        
         position: relative;
         figure {
             position: absolute;
@@ -253,7 +260,8 @@ header{
         &__contents {
             padding: 75rem 0 170rem 173rem;
             @include media-sp{
-                padding: 57rem 0 162rem 39rem;
+                padding: 18rem 0 152rem 40rem;
+                margin-top: 20rem;
             }
             .__subttl {
                 font-family: YuGothic;
@@ -263,9 +271,11 @@ header{
                 color: #ea6a54;
                 padding-bottom: 20px;
                 padding-left: 15rem;
+                position: relative;
                 @include media-sp{
-                    padding: 0;
-                    font-size: 24rem;
+                    padding-bottom: 14rem;
+                    padding-left: 0;
+                    font-size: 22rem;
                 }
             }
             .__ttl {
@@ -279,12 +289,14 @@ header{
                 justify-content: flex-start;
                 padding-bottom: 64rem;
                 padding-left: 15rem;
+                position: relative;
                 @include media-sp{
                     padding-top: 12rem;
                     padding-left: 0;
-                    font-size: 48rem;
-                    line-height: 65rem;
+                    font-size: 46rem;
+                    line-height: 1.2;
                     padding-bottom: 0;
+                    position: relative;
                 }
             }
             .__wrap {
@@ -302,9 +314,9 @@ header{
                     border-radius: 50%;
                     position: relative;
                     z-index: 1;
-                    width: 190px;
+                    width: 190px;  
                     @include media-sp{
-                        width: max-content;
+                       width:  max-content;
                     }
                     &::after{
                         content: "";
@@ -314,10 +326,10 @@ header{
                         transform: translate(-50%, -50%);
                         width: 190px;
                         height: 190px;
-                        z-index: -1;
-                        filter: 11.128439903259277px;
-                        border-radius: 1000px;
-                        background: white;
+                        z-index: -1;                   
+                        border-radius: 1000px;                       
+                        filter: blur(11.128439903259277px); 
+                        background: #fff;               
                         @include media-sp{
                             width: 142rem;
                             height: 142rem;
@@ -363,7 +375,8 @@ header{
                         padding-top: 16px;
                         @include media-sp{
                             padding-top: 16rem;
-                            font-size: 18rem;
+                            font-size: 16rem;
+                            line-height: 1.5;
 
                         }
                         span {
@@ -374,15 +387,25 @@ header{
                             text-align: center;
                             color: #fba443;
                             @include media-sp{
-                                font-size: 18rem;
+                                font-size: 16rem;
+                                line-height: 1.5;
                             }
                         }
                     }
                     .pt-10 {
                         padding-top: 10px;
+                        .og-color {
+                            color: #635146;
+                        }
+                        @include media-sp {
+                            padding-top: 10rem;
+                        }
                     }
                     .lh-20 {
                         line-height: 20px;
+                        @include media-sp {
+                            line-height: 12px;
+                        }
                     }
                 }
             }
@@ -393,11 +416,14 @@ header{
         position: relative; 
         .__treatment {
             background-size: cover;
-            background-position: center;
-            height: 384px;          
-            position: relative;
+            background-position: center;                 
+            position: relative; 
+            height: 384rem;
+            @include media-sp {
+                height: 384rem;
+            }                      
             img {
-                width: 100%;
+                width: 100%;                               
             }
         }
         &__contents {
@@ -417,7 +443,8 @@ header{
             justify-content: flex-end;
             border-radius: 10px;
             @include media-sp {
-                padding: 32rem 79rem 43rem 36rem;
+                top: -100rem;
+                padding: 33rem 64rem 48rem 60rem;              
             }
             &-top {
                 display: flex;
@@ -425,14 +452,14 @@ header{
                 padding-bottom: 35px;
                 padding-left: 23rem;
                 @include media-sp {
-                    padding-bottom: 25rem;
+                    padding-bottom: 13rem;
+                    padding-left: 0;                   
                 }
                 .__ttl {
                     font-family: YuMincho;
                     font-weight: 500;
                     font-size: 45px;
-                    letter-spacing: 0.12em;
-                    line-height: 67.95px;                  
+                    letter-spacing: 0.12em;                            
                     color: #635146;
                     min-width: max-content;
                     padding-right: 60rem;
@@ -440,8 +467,9 @@ header{
                         display: flex;
                         flex-direction: column;
                         justify-content: flex-start;
-                        padding-right: 29rem;
-                        font-size: 47rem;
+                        padding-right: 33rem;
+                        font-size: 46rem;
+                        line-height: 1.2;
                     }
                 }
                 .__text {
@@ -458,14 +486,19 @@ header{
                             color: #4a2e2e;
                             display: flex;
                             flex-direction: column;
-                            padding-top: 22px;
+                            padding-top: 27rem;
+                            @include media-pc {
+                                padding-top: 25rem;
+                            }
                             @include media-sp {
-                                font-size: 32rem;
+                                font-size: 30rem;
+                                line-height: 1.2;
                             }
                             span {                              
                                 font-size: 25px;  
                                 @include media-sp {
-                                    font-size: 32rem;
+                                    font-size: 30rem;
+                                    line-height: 1.2;
                                 }                              
                             }
                         }
@@ -476,12 +509,12 @@ header{
                             letter-spacing: -0.06em;
                             color: #4a2e2e;
                             @include media-sp {
-                                font-size: 101rem;
+                                font-size: 98rem;
                             }
                             span{
                                 font-size: 28px;
                                 @include media-sp {
-                                    font-size: 46rem;
+                                    font-size: 44rem;
                                 }
                             }
                         }
@@ -509,18 +542,22 @@ header{
                     display: block;
                     font-family: YuGothic;
                     font-weight: 500;
-                    font-size: 20rem;
-                    line-height: 30px;                  
+                    font-size: 18rem;
+                    line-height: 1.5;                  
                     color: #755b38;  
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-start; 
-                    padding-bottom: 31rem;                 
+                    padding-bottom: 38rem;                 
                 }  
             }
             &-bottom {
                 padding-left: 96rem;
                 padding-right: 27rem;
+                @include media-sp {
+                    padding-left: 6rem;
+                    padding-right: 0;
+                }
                 .treatment__line {
                     display: flex;
                     align-items: center;
@@ -537,9 +574,9 @@ header{
                     position: relative;
                     transition: all ease 0.3s; 
                     @include media-sp {
-                        font-size: 28rem;
-                        width: 500rem;
-                        height: 93rem;
+                        font-size: 36rem;
+                        width: 536rem;
+                        height: 100rem;
                     }
                     &::before {
                         content: "";
@@ -558,7 +595,7 @@ header{
                     span {
                         font-size: 34px;
                         @include media-sp {
-                            font-size: 34rem;
+                            font-size: 46rem;
                         }
                     }
                     &::after {
@@ -579,7 +616,7 @@ header{
         }
     }
     .p-trouble {   
-        position: relative;     
+        position: relative;        
         &__text {       
             padding-top: 101rem;
             padding-left: 231rem;
@@ -587,21 +624,22 @@ header{
             position: relative;
             z-index: 1;     
             @include media-sp {
-            padding-top: 50rem;
-            padding-left: 100rem;
+                padding-top: 62rem;
+                padding-left: 50rem;
+                padding-bottom: 70rem;
             }    
             .__ttl {
                 font-family: YuMincho;
                 font-weight: 600;
                 font-size: 45px;
-                letter-spacing: 0.12em; 
-                line-height: 67.95px;        
+                letter-spacing: 0.12em;               
                 color: #635146;
                 display: flex;
                 flex-direction: column;
                 justify-content: flex-start;
                 @include media-sp {
-                    font-size: 45rem;
+                    font-size: 44rem;
+                    line-height: 1.5;               
                 }
                 .t-color {
                     color: #ea6a54;
@@ -611,11 +649,15 @@ header{
                 padding-top: 56px;
                 padding-bottom: 0px;
                 @include media-sp {
-                    padding-top: 28rem;
+                    padding-top: 32rem;
                 }               
                 .__text-icon {
                     display: flex;
-                    align-items: center;                                
+                    align-items: center;                      
+                    @include  media-sp {
+                        padding-bottom: 20rem;
+                        align-items: flex-start;
+                    }                             
                     .__subttl {
                         padding-left: 13px;
                         font-family: YuGothic;
@@ -625,9 +667,17 @@ header{
                         line-height: 52.62px;                    
                         color: #404040;
                         @include media-sp {
-                            font-size: 16rem;
-                            padding-left: 13rem;
-                            line-height: 2.5;
+                            font-size: 24rem;
+                            padding-left: 14rem;
+                            line-height: 15.62px;
+                        }
+                    }
+                    .d-col {
+                        @include media-sp {
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            line-height: 1.5;
                         }
                     }
                 }
@@ -638,7 +688,13 @@ header{
             right: 0;
             bottom: 0;
             max-height: 100%;           
-        }              
+        }  
+        &__pain--sp {
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            width: 460rem;  
+        }            
       
     }
     .p-solve {
@@ -646,8 +702,9 @@ header{
         padding-left: 140rem;
         padding-right: 140rem;
         @include media-sp {
-            padding-left: 100rem;
-            padding-right: 100rem;
+            padding-top: 76rem;
+            padding-left: 0;
+            padding-right: 0;
         }
         &__ttl {
             display: flex;
@@ -659,13 +716,14 @@ header{
             letter-spacing: 0.1em;       
             color: #635146;
             @include media-sp {
-                font-size: 35rem;
+                font-size: 48rem;
+                line-height: 1.2;
             }
             .s-color {         
                 font-size: 45px;  
                 color: #FBA443;  
                 @include media-sp {
-                    font-size: 35rem;
+                    font-size: 48rem;
                 }         
             }
             .pb-80 {
@@ -673,8 +731,8 @@ header{
                 padding-bottom: 80px;
                 font-size: 45px;
                 @include media-sp {
-                    padding-bottom: 80rem;
-                    font-size: 35rem;
+                    padding-bottom: 88rem;
+                    font-size: 48rem;
                 }
             }
             .__btn {
@@ -689,10 +747,10 @@ header{
                 width: 100%;
                 margin-bottom: 67px;
                 @include media-sp {
-                    font-size: 25rem;
-                    margin-bottom: 67rem;
-                    height: 80rem;
-                    padding: 0 10rem;
+                    font-size: 36rem;
+                    margin-bottom: 64rem;
+                    height: 86rem;
+                    width: 100%;                
                 }
             }
         }
@@ -703,21 +761,53 @@ header{
             align-items: flex-start;
             gap: 20px 40px ;
             @include media-sp {
-                gap: 25rem 10rem;
+                gap: 30rem;
+                padding-left: 34rem;
+                padding-right: 34rem;
             }
             &:last-child {
                 padding-bottom: 185rem;
+                @include media-sp {
+                    padding-bottom: 0;
+                }
             }           
             .__item {
                 width: calc((100% - 80px) / 3);
                 @include media-sp {
-                    width: 100%;
+                    width: 100%;                    
                 }
                 figure {
+                    position: relative;
+                    @include media-sp {
+                        padding-left: 54rem;
+                        padding-right: 52rem;
+                    }
                     img {
                         width: 100%;
+                    }                   
+                }    
+                .__coming-soon {
+                    position: absolute;
+                    top: 50%;
+                    left: 50%;
+                    transform: translate(-50%, -50%);
+                    font-family: Marcellus,serif;
+                    font-weight: normal;
+                    font-size: 40px;
+                    line-height: 25.85px;
+                    text-align: center;
+                    color: #787471;
+                    opacity: 0.4;
+                    width: max-content;
+                    @include media-pc {
+                        font-size: 40rem;
                     }
-                }
+                    @include media-sp {
+                        font-size: 66rem;
+                        line-height: 21px;
+                        width: max-content;
+                    }
+                }           
                 .__item-ttl {
                     font-family: YuGothic;
                     font-weight: bold;
@@ -733,13 +823,16 @@ header{
                             font-size: 22rem;
                         }
                         @include media-sp {
-                            font-size: 26rem;
-                            padding-top: 25rem;
-                            padding-bottom: 21rem;
+                            font-size: 44rem;
+                            padding-top: 50rem;
+                            padding-bottom: 48rem;
                         }                 
                 }
                 .pt-40 {
                     padding-top: 40rem;
+                    @include media-sp {
+                        padding-top: 50rem;
+                    }
                 }
                 .c-color {
                     color: #FBA443;
@@ -764,37 +857,46 @@ header{
                         font-size: 16rem;
                     } 
                     @include media-sp {
-                        font-size: 20rem;
+                        font-size: 28rem;
+                        line-height: 1.5;
                     }                  
                 }
                 .pb-60 {
                     padding-bottom: 40rem;
                     @include media-sp {
-                        padding-bottom: 40rem;
+                        padding-bottom: 0rem;
                     }
                 }
             }
     }
-    .p-cost {
+    .p-cost {     
         background: url(../img/cost.jpg) no-repeat;
         background-size: cover;
         background-position: right bottom;
         width: 100%;
         padding-top: 123rem;
-        padding-bottom: 115rem;    
+        padding-bottom: 115rem;  
+        @include media-sp { 
+           padding-bottom: 310rem;
+           padding-top: 0;
+        }
         &__container{
             max-width: 1140px;                 
             padding-left: 20px;
             padding-right: 20px;
             margin-left: auto;
-            margin-right: auto;
+            margin-right: auto; 
+            @include media-sp {
+                padding-left: 20rem;
+                padding-right: 20rem;
+            }           
         }
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
             font-size: 36px;
             letter-spacing: 0.1em;
-            line-break: 2.5;       
+            line-height: 60px;      
             color: #635146;
             display: flex;
             flex-direction: column;
@@ -802,11 +904,14 @@ header{
             padding-bottom: 66px;
             @include media-pc {
                 font-size: 34rem;
-                padding-bottom: 66rem;
+                padding-bottom: 66rem;               
             }
             @include media-sp {
-                font-size: 30rem;
-                padding-bottom: 66rem;
+                font-size: 36rem;
+                line-height: 31px; 
+                padding-top: 104rem;
+                padding-left: 28rem; 
+                line-height: 1.5;            
             }
             .cost__color {
                 color: #E96556;
@@ -814,17 +919,21 @@ header{
                     font-size: 34rem;
                 }
                 @include media-sp {
-                    font-size: 30rem;
+                    font-size: 36rem;
                 }
-            }         
+                .or-color {
+                    color: #635146;
+                }
+            }      
         }
+
         &__contents {
             padding-top: 43rem;
             padding-left: 52rem;
             padding-right: 52rem;
-            padding-bottom: 56rem;
-            background: #fff;
+            padding-bottom: 56rem;         
             max-width: 703px;
+            background: #fff;
             @include media-sp {
                 max-width: 703rem;
                 padding: 40rem 50rem 50rem 56rem;
@@ -1008,10 +1117,204 @@ header{
                 }
             }
         }
- 
+    }
+    .p-cost__contents--sp {
+        background: #efe9e7;
+        padding-left: 40rem;
+        padding-right: 40rem;
+        .sp__contents {
+            background: #fff;
+            padding-top: 42rem;
+            padding-left: 32rem;
+            padding-right: 40rem;
+            padding-bottom: 72rem;
+            transform: translateY(-238rem);
+            .sp__contents-top {
+                .sp__contents-ttl {
+                    font-family: YuMincho;
+                    font-weight: 600;
+                    font-size: 40rem;
+                    letter-spacing: 0.1em;
+                    line-height: 24px;        
+                    color: #635146;
+                    padding-bottom: 26rem;
+                }
+                .sp__contents-subttl {
+                    font-family: YuGothic;
+                    font-weight: 500;
+                    font-size: 26rem;
+                    line-height: 22.85px;       
+                    color: #404040;
+                    padding-bottom: 122rem;
+                    line-height: 1.5;
+                }
+            }
+            .sp__contents-mid {
+                @include flex-hc-vc;
+                margin-bottom: 86rem;
+                .sp__contents-mid__text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    font-family: YuGothic;
+                    font-weight: 500;
+                    font-size: 28rem;
+                    letter-spacing: 0.1em;
+                    line-height: 22px;
+                    text-align: center;
+                    color: #707070;   
+                    padding-bottom: 22rem; 
+                    border-bottom: 1px solid #707070;  
+                    width: 80%;  
+                    line-height: 1.5;              
+                }
+            }
+            .sp__contents-icon {
+                display: flex;
+                gap: 30rem;
+                align-items: center;
+                .__wrap-item {
+                    padding-top: 58px;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    gap: 35px;
+                    @include media-sp {
+                        padding-top: 0rem;
+                        gap: 25rem;
+                    }
+                    .__wrap-icon {
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        .__wrap-text {
+                            display: flex;
+                            align-items: center;
+                            gap: 24px;
+                            padding-bottom: 16px;
+                            @include media-sp {                              
+                                padding-bottom: 32rem;
+                                gap: 48rem
+                            }
+                            .__text-number {
+                                @include  flex-hc-vc;
+                                width: 43px;
+                                height: 44px;
+                                background: #E9E3D3;
+                                font-family: "Arial Hebrew";
+                                font-weight: normal;
+                                font-size: 25px;
+                                text-align: center;
+                                color: #696459; 
+                                @include media-sp {
+                                    width: 86rem;
+                                    height: 88rem;
+                                    font-size: 50rem;
+                                }                           
+                            }                                
+                        }
+                        .__wrap-subttl {
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 25.85px;
+                            text-align: center;
+                            color: #EB7466;
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            min-width: max-content;
+                            @include media-sp {
+                                font-size: 28rem; 
+                                line-height: 1.5;                            
+                            }
+                            .wrap-color {                                 
+                                font-family: YuGothic;
+                                font-weight: bold;
+                                font-size: 14px;
+                                line-height: 25.85px;
+                                text-align: center;
+                                color: #404040;
+                                @include media-sp {
+                                    font-size: 28rem;
+                                }
+                            }                             
+                        }                     
+                    }                                                          
+                }
+            }
+            .sp__contents-icon__bottom {
+                margin-top: 32rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                gap: 24rem;               
+                .__wrap-icon {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    .__wrap-text {
+                        display: flex;
+                        align-items: center;
+                        gap: 24px;
+                        padding-bottom: 16px;
+                        @include media-sp {                              
+                            padding-bottom: 32rem;
+                            gap: 48rem
+                        }
+                        .__text-number {
+                            @include  flex-hc-vc;
+                            width: 43px;
+                            height: 44px;
+                            background: #E9E3D3;
+                            font-family: "Arial Hebrew";
+                            font-weight: normal;
+                            font-size: 25px;
+                            text-align: center;
+                            color: #696459; 
+                            @include media-sp {
+                                width: 86rem;
+                                height: 88rem;
+                                font-size: 50rem;
+                            }                           
+                        }                                
+                    }
+                    .__wrap-subttl {
+                        font-family: YuGothic;
+                        font-weight: bold;
+                        font-size: 14px;
+                        line-height: 25.85px;
+                        text-align: center;
+                        color: #EB7466;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        min-width: max-content;
+                        @include media-sp {
+                            font-size: 28rem; 
+                            line-height: 1.5;                            
+                        }
+                        .wrap-color {                                 
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 14px;
+                            line-height: 25.85px;
+                            text-align: center;
+                            color: #404040;
+                            @include media-sp {
+                                font-size: 28rem;
+                            }
+                        }                             
+                    }                     
+                }                
+            }
 
+        }
     }
     .p-alignment {
+        @include media-sp {
+            display: none;
+        }
         padding-left: 240rem;
         padding-right: 240rem;
         padding-top: 107px;
@@ -1107,10 +1410,13 @@ header{
     .p-case {
         padding-top: 100px;
         padding-bottom: 137px;
-        background: #f4ede5; 
+        background: #f4ede5;  
+        margin-top: -70rem;      
         @include media-sp{
-            padding-top: 50rem;
-            padding-bottom: 68rem;
+            padding-top: 90rem;
+            padding-bottom: 116rem;
+            padding-left: 116rem;
+            padding-right: 116rem;
         }    
         &__ttl {
             font-family: YuGothic;
@@ -1124,8 +1430,8 @@ header{
             margin: 0 auto;
             position: relative;
             @include media-sp {
-                font-size: 34rem;
-                padding-bottom: 5rem;
+                font-size: 48rem;
+                padding-bottom: 4rem;
             }
                 &::before {
                     content: "";
@@ -1150,26 +1456,27 @@ header{
             text-align: center;
             color: #fba443;   
             @include media-sp {
-                font-size: 16rem;            
+                font-size: 20rem;            
             }
         }
-        &__contents {
-            padding-left: 176rem;
-            padding-right: 176rem;
+        &__contents {  
             padding-top: 53rem;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
             gap: 100rem;
             @include media-pc {
-                gap: 40rem;
+                gap: 30rem;
             }
-            @include media-sp {
-                padding-left: 20px;
-                padding-right: 20px;
-                padding-top: 27rem;              
+            @include media-sp { 
+                background: #fff; 
+                margin-top: 86rem;             
+                padding-top: 44rem;  
+                padding-left: 62rem;
+                padding-right: 62rem;  
+                padding-top: 50rem;          
             }
-            .__item {  
+            .__item {                  
                 width: calc((100% - 200rem) / 3);
                 @include media-pc {
                     width: calc((100% - 80rem) / 3);
@@ -1193,8 +1500,8 @@ header{
                         font-size: 24rem;
                     }                   
                     @include media-sp {
-                        font-size: 24rem;
-                        padding-bottom: 25rem;
+                        font-size: 32rem;
+                        padding-bottom: 42rem;
                     }
                 }
                 &-before {
@@ -1205,8 +1512,8 @@ header{
                     text-align: center;
                     color: #787471;
                     @include media-sp {
-                        font-size: 21rem;
-                        padding-top: 5rem;
+                        font-size: 32rem;
+                        padding-top: 10rem;
                     }
                 }
                 &-center {
@@ -1216,15 +1523,15 @@ header{
                     height: 30px;
                     margin: 0 auto;
                     @include media-sp {
-                        padding-top: 8rem;
-                        width: 100rem;
-                        height: 30rem;
+                        padding-top: 14rem;
+                        width: 160rem;
+                        height: 40rem;
                     }
                 }
                 .item__after {
                     padding-top: 12px;
                     @include media-sp {
-                        padding-top: 12rem;
+                        padding-top: 19rem;
                     }
                 }
                 &-after {
@@ -1235,8 +1542,8 @@ header{
                     text-align: center;
                     color: #787471;
                     @include media-sp {
-                        font-size: 21rem;
-                        padding-top: 5rem;
+                        font-size: 32rem;
+                        padding-top: 9rem;
                     }
                 }
                 &-ttl {
@@ -1245,7 +1552,7 @@ header{
                     flex-direction: column;
                     justify-content: flex-start;
                     @include media-sp {                    
-                        padding-top: 29rem;
+                        padding-top: 44rem;
                     }
                     .__item-flex {
                         display: flex;
@@ -1253,8 +1560,8 @@ header{
                         gap: 15px;
                         padding-bottom: 12px;
                         @include media-sp {
-                            gap: 15rem;
-                            padding-bottom: 12rem;
+                            gap: 24rem;
+                            padding-bottom: 20rem;
                         }
                         .__item-color {
                             @include flex-hc-vc;
@@ -1267,9 +1574,9 @@ header{
                             font-size: 13px;                   
                             color: #696459;
                             @include media-sp {
-                                width: 82rem;
-                                height: 30rem;
-                                font-size: 17rem;
+                                width: 118rem;
+                                height: 44rem;
+                                font-size: 20rem;
                             }
                         }
                         .__date {
@@ -1278,7 +1585,7 @@ header{
                             font-size: 15px;                         
                             color: #000;
                             @include media-sp {
-                                font-size: 17rem;
+                                font-size: 24rem;
                             }
                         }
                         .__item-wrap {
@@ -1293,9 +1600,9 @@ header{
                             font-size: 13px;                          
                             color: #696459;
                             @include media-sp {
-                                width: 180rem;
-                                height: 45rem;
-                                font-size: 22rem;
+                                width: 118rem;
+                                height: 44rem;
+                                font-size: 20rem;
                             }
                         }
                         .__price {
@@ -1307,7 +1614,7 @@ header{
                                 font-size: 17rem;
                             }                       
                             @include media-sp {
-                                font-size: 25rem;
+                                font-size: 24rem;
                             }
                         }
                     }
@@ -1324,7 +1631,7 @@ header{
         margin-left: auto;
         margin-right: auto;
         @include media-sp {
-            padding: 25rem 20px 50rem 20px;
+            padding: 88rem 40rem 80rem 40rem;
         }    
         &__ttl {
             font-family: YuGothic;
@@ -1338,8 +1645,8 @@ header{
             margin: 0 auto;
             position: relative;
             @include media-sp {
-                font-size: 34rem;
-                padding-bottom: 5rem;
+                font-size: 48rem;
+                padding-bottom: 4rem;
             }
             &::before {
                 content: "";
@@ -1364,8 +1671,8 @@ header{
             text-align: center;
             color: #fba443;        
             @include media-sp {
-                font-size: 16rem;
-                padding-bottom: 65rem;
+                font-size: 20rem;
+                padding-bottom: 40rem;
             }
         }
         &__contents {
@@ -1376,13 +1683,13 @@ header{
             align-items: flex-start;
             gap: 29rem;
             @include media-sp{
-                gap: 20px;
-                padding-top: 28rem;
+                gap: 46rem;
+                padding-top: 0;
             }
             .__item {
                 width: calc((100% - 87rem) / 4);
                 @include media-sp{
-                    width: calc(50% - 10px);
+                    width: calc(50% - 23rem);
                 }
                 &-healing {
                    position: relative;
@@ -1406,17 +1713,17 @@ header{
                     text-align: center;
                     color: #fff;
                     @include media-sp {
-                        font-size: 25rem;
-                        width: 43rem;
-                        height: 44rem;
+                        font-size: 36rem;
+                        width: 66rem;
+                        height: 68rem;
                         bottom: -20rem;
                     }
                 }
                 .__image-text {
                     position: absolute;
                     top: 50%;
-                    left: 24px;
-                    transform: translateY(-50%);
+                    left: 50%;
+                    transform: translate(-50%, -50%);
                     font-family: Marcellus,serif;
                     font-weight: normal;
                     font-size: 30px;
@@ -1424,9 +1731,11 @@ header{
                     text-align: center;
                     color: #787471;
                     opacity: 0.4;
+                    width: max-content;
                     @include media-sp {
-                        font-size: 30rem;
-                        left: 70rem;
+                        font-size: 32rem;                      
+                        line-height: 14px;
+                        width: max-content;
                     }
                 }
                 .__ttl {
@@ -1437,8 +1746,9 @@ header{
                     color: #635146;
                     padding-top: 53px;
                     @include media-sp {
-                        font-size: 22rem;
-                        padding-top: 40rem;
+                        font-size: 34rem;
+                        line-height: 15px;
+                        padding-top: 48rem;
                     }
                 }
                 .__subttl {
@@ -1449,9 +1759,9 @@ header{
                     color: #635146;
                     padding-top: 21px;
                     @include media-sp {
-                        font-size: 15rem;
-                        padding-top: 21rem;
-                        line-height: 2.5;
+                        font-size: 26rem;
+                        padding-top: 28rem;
+                        line-height: 1.5;
                     }
                 }
             }
@@ -1466,7 +1776,10 @@ header{
         padding-top: 111rem;  
         padding-bottom: 113rem;
         @include media-sp {
-            padding-top: 55rem;
+            padding-top: 58rem;
+            padding-left: 26rem;
+            padding-right: 26rem;
+            padding-bottom: 86rem;
         }     
         &__ttl {
             font-family: YuMincho;
@@ -1479,7 +1792,7 @@ header{
             display: flex;
             justify-content: center;
             align-items: center;
-            position: relative;
+            position: relative;           
             &::after {
                 content: "";
                 position: absolute;
@@ -1498,16 +1811,19 @@ header{
                 font-size: 45rem;
             }
             @include media-sp {
-                font-size: 40rem;
-                padding-bottom: 52rem;   
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                font-size: 48rem;
+                line-height: 1.5;
             }
         }
         &__contents {
             padding-left: 150rem;
             padding-right: 150rem;
             @include media-sp {
-                padding-left: 20rem;
-                padding-right: 20rem;
+                padding-left: 0;
+                padding-right: 0;
             }
             .__wrap {
                 display: flex;
@@ -1515,7 +1831,7 @@ header{
                 align-items: flex-start;
                 gap: 100rem;
                 @include media-sp {
-                    gap: 10rem;
+                    gap: 20rem;
                 }
                 .__items {
                     width: calc((100% - 100rem) / 2);
@@ -1535,12 +1851,12 @@ header{
                         padding-right: 48rem;
                         margin-bottom: 61rem;
                         @include media-sp {
-                            padding-top: 10rem;
-                            padding-left: 10rem;
-                            padding-bottom: 12rem;
-                            padding-right: 24rem;
-                            margin-bottom: 30rem;
+                            padding-top: 35rem;
+                            padding-left: 25rem;                       
+                            padding-right: 40rem;
+                            margin-bottom: 22rem;
                             width: 100%;
+                            gap: 44rem;
                         }
                         .item__ttl {
                             @include flex-hc-vc;
@@ -1556,9 +1872,10 @@ header{
                             color: #fba443;
                             border: 0.5px solid #fba443;                            
                             @include media-sp {
-                                min-width: 76rem;
-                                height: 76rem;
-                                font-size: 21rem;
+                                min-width: 90rem;
+                                height: 90rem;
+                                font-size: 22rem;
+                                line-height: 12px;
                             }
                         }
                         .item__subttl {                        
@@ -1575,13 +1892,14 @@ header{
                                 line-height: 2.5;
                             }
                             @include media-sp {                      
-                                font-size: 14rem;
-                                line-height: 2;
-                            }                        
+                                font-size: 29rem;
+                                line-height: 1.5;
+                            } 
+                            .font-normal {
+                                font-weight: normal;
+                            }                       
                         }
-                        .font-normal {
-                            font-weight: normal;
-                        }
+                       
                     }
                 }
             }
@@ -1593,22 +1911,25 @@ header{
                 padding-top: 35rem;
                 padding-bottom: 37rem;
                 @include media-sp {
-                    padding-left: 20rem;
-                    padding-right: 20rem;
-                    padding-top: 20rem;
-                    padding-bottom: 20rem;                    
+                    padding-left: 69rem;
+                    padding-right: 71rem;
+                    padding-top: 37rem;
+                    padding-bottom: 37rem;                    
                 }
-                .__more-view {
-                    max-width: 646rem;
+                .__more-view {                   
                     font-family: YuMincho;
                     font-weight: 600;
                     font-size: 24px;
                     line-height: 46px;         
                     color: #635146;                       
-                    background: transparent; 
-                    @include media-sp {                  
+                    background: transparent;
+                    @include media-pc {
                         font-size: 24rem;                                          
                         line-height: 2;
+                    } 
+                    @include media-sp {                  
+                        font-size: 32rem;                                          
+                        line-height: 1.2;
                     }   
                 }             
             }
@@ -1618,9 +1939,11 @@ header{
             padding-right: 27rem;
             padding-top: 88px;
             @include media-sp {
-                padding-left: 10rem;
-                padding-right: 10rem;
-                padding-top: 40rem;
+                @include flex-hc-vc;
+                padding-left: 0;
+                padding-right: 0;
+                margin-top: 75rem;
+                padding-top: 0;
             }
             .view__line {
                 display: flex;
@@ -1638,14 +1961,14 @@ header{
                 width: 500px;
                 height: 93px;
                 @include media-sp {  
-                    font-size: 25rem;
-                    width: 500rem;
-                    height: 93rem;
+                    font-size: 36rem;
+                    width: 536rem;
+                    height: 100rem;
                 }
                 span {
                     font-size: 34px;
                     @include media-sp{
-                        font-size: 30rem;
+                        font-size: 46rem;
                     }
                 }
                 &::after {
@@ -1668,8 +1991,10 @@ header{
         padding-top: 91rem;
         padding-bottom: 96rem;
         @include media-sp {
-            padding-top: 50rem;
-            padding-bottom: 50rem;               
+            padding-top: 58rem;
+            padding-bottom: 92rem;
+            padding-left: 54rem;
+            padding-right: 54rem;               
         }    
         &__ttl {
             font-family: YuGothic;
@@ -1683,8 +2008,8 @@ header{
             margin: 0 auto;
             position: relative;
             @include media-sp {
-               font-size: 34rem;
-               padding-bottom: 9rem;
+               font-size: 48rem;
+               padding-bottom: 4rem;
             }    
             &::before {
                 content: "";
@@ -1710,8 +2035,8 @@ header{
             color: #fba443;
             padding-bottom: 66rem;
             @include media-sp {
-                font-size: 16rem;
-                padding-bottom: 32rem;
+                font-size: 20rem;
+                padding-bottom: 40rem;
             }
         }
         &__contents {
@@ -1722,9 +2047,11 @@ header{
             justify-content: center;
             gap: 60rem 60rem;
             @include media-sp {
-                padding-left: 20rem;
-                padding-right: 20rem;
-                padding-top: 33rem;
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 0;
+                padding-bottom: 0;
+                gap: 40rem;
             }
             .__wrap {
                 width: calc((100% - 60rem) / 2);              
@@ -1743,10 +2070,10 @@ header{
                 }                
                 @include media-sp {
                     width: 100%;
-                    padding-top: 22rem;
-                    padding-bottom: 28rem;
-                    padding-left: 35rem;
-                    padding-right: 35rem;
+                    padding-top: 48rem;
+                    padding-bottom: 46rem;
+                    padding-left: 36rem;
+                    padding-right: 36rem;
                 }
                 .__wrap-ttl {                 
                     font-family: "Noto Serif JP",serif;
@@ -1765,12 +2092,13 @@ header{
                         padding-bottom: 20rem;
                     }
                     @include media-sp {
-                        font-size: 34rem;
-                        padding-bottom: 22rem;
-                        line-height: 2;
+                        font-size: 48rem;
+                        padding-bottom: 30rem;
+                        line-height: 1.5;
                     }  
                     span {
-                        font-size: 31px;
+                        font-size: 40rem;
+                        line-height: 26px;
                     }                
                 }
                 .__wrap-price {
@@ -1783,7 +2111,7 @@ header{
                         font-size: 23rem;
                     }
                     @include media-sp {
-                        font-size: 27rem;
+                        font-size: 40rem;
                     }
                 }
                 .__wrap-text {
@@ -1805,15 +2133,14 @@ header{
                             padding-bottom: 17rem;
                             @include media-pc {
                                 font-size: 22rem;
-                                padding-top: 22rem;
-                                line-height: 2;
-                                padding-bottom: 10rem;;
+                                padding-top: 15rem;                              
+                                padding-bottom: 15rem;;
                             }       
                             @include media-sp {
-                                font-size: 23rem;
+                                font-size: 44rem;
                                 padding-top: 22rem;
-                                line-height: 2;
-                                padding-bottom: 10rem;
+                                line-height: 1.2;                           
+                                padding-bottom: 40rem;
                             }                      
                         }
                         .__text-number {
@@ -1822,11 +2149,21 @@ header{
                             font-size: 60px;
                             letter-spacing: -0.06em;
                             color: #4a2e2e;
+                            .small__span {
+                                font-family: "Noto Serif JP",serif;
+                                font-weight: normal;
+                                font-size: 10px;
+                                text-align: center;
+                                color: #696459;
+                                @include media-sp {
+                                    font-size: 18rem;
+                                }
+                            }
                             @include media-pc {
                                 font-size: 50rem;
                             }
                             @include media-sp {
-                                font-size: 60rem;
+                                font-size: 112rem;
                             }
                             span {
                                 font-size: 28px;
@@ -1834,7 +2171,7 @@ header{
                                     font-size: 28rem;
                                 }
                                 @include media-sp {
-                                    font-size: 28rem;
+                                    font-size: 54rem;
                                 }
                             }
                           
@@ -1849,8 +2186,8 @@ header{
                         display: flex;
                         flex-direction: column;
                         @include media-sp {
-                            font-size: 17rem;
-                            line-height: 2;
+                            font-size: 24rem;
+                            line-height: 20px;
                         }   
                     }
                 }
@@ -1868,8 +2205,9 @@ header{
                         padding-top: 24rem;
                     }
                     @include media-sp {
-                        font-size: 16rem;
-                        padding-top: 24rem;
+                        font-size: 24rem;
+                        line-height: 20px;
+                        padding-top: 26rem;
                     }
                 }
                 .__wrap-subttl {                
@@ -1885,7 +2223,9 @@ header{
                         padding-top: 18rem;
                     }
                     @include media-sp {
-                        font-size: 24rem;
+                        font-size: 28rem;
+                        line-height: 1.5;
+                        padding-top: 24rem;
                     }
                 }    
                 .__wrap-items {
@@ -1910,8 +2250,8 @@ header{
                             line-height: 2;
                         }
                         @include media-sp {
-                            font-size: 22rem;
-                            line-height: 2;
+                            font-size: 20rem;
+                            line-height: 1.5;
                         }
                     }
                 }            
@@ -1922,12 +2262,18 @@ header{
                 margin-bottom: -10rem;              
                 width: 100%;  
                 border-radius: 40px;
-                background: #f5aca3;             
+                background: rgba(245, 172, 163, 0.1);             
                 padding-top: 22rem;
                 padding-bottom: 22rem;  
                 @include media-sp {
-                    padding-top: 55rem;
-                    padding-bottom: 36rem;
+                    padding-top: 42rem;
+                    padding-bottom: 36rem;              
+                    height: 60rem;
+                    border-radius: 30px;
+                    background: #f5aca3;                
+                    margin-top: 42rem;
+                    margin-bottom: 36rem;
+                    height: 120rem;                   
                 }        
                 .__age-text {
                     font-family: YuGothic;
@@ -1937,9 +2283,18 @@ header{
                     color: #958b83;
                     padding-right: 73rem;
                     @include media-sp {
-                        font-size: 27rem;
-                        padding-right: 73rem;
+                        font-size: 36rem;
+                        padding-right: 46rem;
+                        line-height: 23px;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
+                        color: #958b83;
+                        line-height: 1.5;
                     }
+                }
+                figure {
+                    width: 108rem;
                 }
             }
         }
@@ -1947,15 +2302,17 @@ header{
     .p-question {       
         padding-top: 119rem;
         padding-bottom: 118rem;
-        background: #fafafa;  
+        background: #fafafa;        
         @include media-pc {
             padding-top: 100rem;
             padding-bottom: 100rem;
-        }  
+        } 
         @include media-sp {
-            padding-top: 50rem;
-            padding-bottom: 50rem;
-        }
+            padding-top: 112rem;
+            padding-left: 40rem;
+            padding-right: 35rem;
+            padding-bottom: 106rem;
+        }     
         &__ttl {
             font-family: YuGothic;
             font-weight: bold;
@@ -1972,8 +2329,8 @@ header{
                 font-size: 34rem;
             }  
             @include media-sp {
-                padding-bottom: 5rem;
-                font-size: 30rem;
+                padding-bottom: 4rem;
+                font-size: 48rem;
             }
             &::before {
                 content: "";
@@ -1986,7 +2343,7 @@ header{
                 height: 27px;
                 @include media-sp {
                     top: -10rem;
-                    left: -34rem;
+                    left: -57rem;
                 }
             }
         }      
@@ -2002,8 +2359,8 @@ header{
                 font-size: 16rem;
             }  
             @include media-sp {
-                padding-bottom: 65rem;
-                font-size: 16rem;
+                padding-bottom: 40rem;
+                font-size: 20rem;
             }
         }
         &__contents {
@@ -2020,10 +2377,10 @@ header{
                 gap: 80rem 84rem;
             }  
             @include media-sp {
-                padding-left: 20rem;
-                padding-right: 20rem;
-                padding-top: 50rem;
-                gap: 50rem 52rem;
+                padding-left: 0;
+                padding-right: 0;
+                padding-top: 0;
+                gap: 0;
             }
             .__items {
                 width: calc((100% - 104rem) / 2);               
@@ -2033,7 +2390,7 @@ header{
                 padding: 30px 0;               
                     @include media-sp {
                         width: 100%;
-                        padding: 30rem 0;
+                        padding: 60rem 0;
                     }                  
                 }        
                 .__inner-items {
@@ -2047,12 +2404,32 @@ header{
                         padding-right: 100rem;
                     }
                     @include media-sp {
-                        gap: 27rem;
-                        padding-right: 50rem;
+                        gap: 30rem;               
                     }                   
                     &--answer{
                         padding-top: 20px;
                         padding-bottom: 20px;
+                        justify-content: flex-end;
+                        @include media-sp {
+                            display: flex;
+                            justify-content: flex-end;
+                            padding-top: 40rem;
+                            padding-bottom: 0;
+                        }
+                        .__intro {
+                            width: 494px;
+                            height: 116px;
+                            font-family: YuGothic;
+                            font-weight: 500;
+                            font-size: 15px;
+                            line-height: 31.85px;
+                            text-align: left;
+                            color: #696459;
+                            @include media-sp {
+                                font-size: 28rem;
+                                line-height: 22.85px;
+                            }                            
+                        }
                     }                
                     .__inner {
                         font-family: Helvetica;
@@ -2063,7 +2440,10 @@ header{
                         height: 44px;
                         border-radius: 3px;
                         background: #e9e3d3;  
-                        @include flex-hc-vc;
+                        @include flex-hc-vc;  
+                        @include media-sp {
+                            font-size: 38rem;
+                        }          
                     }  
                     .bg-color {
                         color: #7e6216!important;
@@ -2078,6 +2458,15 @@ header{
                         line-height: 34px;           
                         color: #222c41; 
                         width: calc(100% - 48px - 27px);
+                        @include media-sp {
+                            padding-right: 0;
+                            font-size: 36rem;
+                            line-height: 22.85px;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start; 
+                            line-height: 1.5;                                 
+                        }
                     }                                   
                 }  
           }
@@ -2087,9 +2476,10 @@ header{
             padding-right: 27rem;
             padding-top: 209rem;
             @include media-sp {
-                padding-left: 29rem;
-                padding-right: 14rem;
-                padding-top: 44rem;
+                padding-left: 0rem;
+                padding-right: 0rem;
+                padding-top: 90rem;
+                @include flex-hc-vc;
             }
             .view__line {
                 display: flex;
@@ -2112,9 +2502,9 @@ header{
                     height: 93rem;
                 }
                 @include media-sp {
-                    font-size: 28rem;
-                    width: 500rem;
-                    height: 93rem;
+                    font-size: 36rem;
+                    width: 536rem;
+                    height: 100rem;
                 }
                 span {
                     font-size: 34px;
@@ -2122,7 +2512,7 @@ header{
                         font-size: 32rem;
                     }
                     @include media-sp {
-                        font-size: 32rem;
+                        font-size: 46rem;
                     }
                 }
                 &::after {
@@ -2144,11 +2534,15 @@ header{
     .p-intro {
         padding-top: 100px;         
         @include media-sp {
-            padding-top: 50rem;
+            padding-top: 110rem;
         }
         &__container {
             padding-left: 90rem;
             padding-right: 90rem;
+            @include media-sp {
+                padding-left: 0;
+                padding-right: 0;
+            }
             &__ttl {    
                 font-family: YuMincho;
                 font-weight: 600;
@@ -2165,8 +2559,9 @@ header{
                     margin-bottom: 130rem;
                 }
                 @include media-sp {
-                    font-size: 40rem;
-                    margin-bottom: 65rem;
+                    font-size: 48rem;
+                    line-height: 30.95px;
+                    margin-bottom: 102rem;
                 }
                 &::after {
                     content: "";
@@ -2184,20 +2579,17 @@ header{
             }
             &__contents {
                 @include media-sp {
-                    padding-left: 20rem;
-                    padding-right: 20rem;
+                    padding-left: 0rem;
+                    padding-right: 0rem;
+                    padding-bottom: 78rem;
                 }
                 .__inner-item {
                     display: flex;  
                     flex-wrap: wrap;               
                     align-items: flex-end;
-                    justify-content: space-between;
+                    justify-content: space-between;                    
                     figure {
-                        width: 450rem;
-                        @include media-sp {
-                            width: 100%;
-                            justify-content: flex-start;
-                        }
+                        width: 450rem;                        
                     }                  
                     .__inner-text {
                         width: calc(100% - 570rem);
@@ -2205,10 +2597,7 @@ header{
                         flex-direction: column;
                         justify-content: flex-start;
                         padding-bottom: 22rem;
-                        background: #fcfcfc;
-                        @include media-sp {
-                            width: 100%;
-                        }
+                        background: #fcfcfc;                       
                         .__bgttl {                       
                             font-family: YuMincho;
                             font-weight: 500;
@@ -2231,10 +2620,7 @@ header{
                             }
                             @include media-pc {
                                 font-size: 18rem;
-                            }
-                            @include media-sp {
-                                font-size: 16rem;
-                            }
+                            }                          
                             .fs-36 {
                                 font-size: 36px;
                                 font-family: YuMincho;
@@ -2244,10 +2630,7 @@ header{
                                 color: #404040;
                                 @include media-pc {
                                     font-size: 36rem;
-                                }
-                                @include media-sp {
-                                    font-size: 30rem;
-                                }
+                                }                               
                             }
                             span {
                                 font-family: Marcellus,serif;
@@ -2259,11 +2642,7 @@ header{
                                 @include media-pc {
                                     font-size: 11rem;
                                     padding-top: 15rem;
-                                }
-                                @include media-sp {
-                                    font-size: 11rem;
-                                    padding-top: 15rem;
-                                }
+                                }                               
                             }    
                         }
                         .__biography {
@@ -2283,12 +2662,7 @@ header{
                                 width: 49rem;
                                 height: 26rem;
                                 font-size: 14rem;
-                            }
-                            @include media-sp {
-                                width: 49rem;
-                                height: 26rem;
-                                font-size: 14rem;
-                            }
+                            }                           
                         }
                         .__subttl {
                             display: flex;
@@ -2296,10 +2670,7 @@ header{
                             gap: 65rem;  
                             @include media-pc {
                                 gap: 60rem;  
-                            }
-                            @include media-sp {
-                                gap: 20rem;  
-                            }                 
+                            }                                       
                             .bio__ttl {
                                 font-family: YuGothic;
                                 font-weight: 500;
@@ -2309,15 +2680,10 @@ header{
                                 width: 50px;
                                 padding-top: 16rem;
                                 @include media-pc {
-                                    font-size: 14rem;
+                                    font-size: 15rem;
                                     padding-top: 17rem;
                                     width: 50rem;
-                                }
-                                @include media-sp {
-                                    font-size: 14rem;
-                                    padding-top: 17rem;
-                                    width: 50rem;
-                                }                 
+                                }                                        
                             }
                             .bio__subttl {
                                 font-family: YuGothic;
@@ -2327,14 +2693,121 @@ header{
                                 color: #404040;
                                 @include media-pc {
                                     font-size: 15rem;                              
-                                }
-                                @include media-sp {
-                                    font-size: 16rem;                             
-                                }                 
+                                }                                           
                             }
                         }      
                     }   
-                }    
+                }   
+                .__inner-item--sp {
+                    padding-left: 40rem;
+                    .sp--inner {
+                        display: flex;
+                        justify-content: space-between;
+                        figure {
+                            width: 296rem;
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+                        .__bgttl {
+                            padding-top: 100rem;
+                            font-family: YuMincho;
+                            font-weight: 500;
+                            font-size: 36rem;
+                            letter-spacing: 0.1em;                                              
+                            color: #404040;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-start;
+                            padding-left: 4rem;
+                            .fs-36 {
+                                font-family: YuMincho;
+                                font-weight: 500;
+                                font-size: 36rem;
+                                letter-spacing: 0.1em;                                                 
+                                color: #404040;
+                                line-height: 40.85px; 
+                            }
+                            .fs-color {
+                                padding-top: 31rem;
+                                font-family: Marcellus;
+                                font-weight: normal;
+                                font-size: 22rem;
+                                letter-spacing: 0.12em;                          
+                                text-align: left;
+                                color: #fba443;
+                            }
+
+                        }
+                    }
+                    .__inner-text--sp {
+                        .__biography {
+                            margin-top: 88rem;
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 28rem;
+                            letter-spacing: 0.04em;
+                            line-height: 26.38px;
+                            text-align: left;
+                            color: #696459;  
+                            width: 98rem;
+                            height: 52rem;
+                            border-radius: 5px;
+                            background: #e9e3d3;
+                            @include flex-hc-vc;  
+                            margin-bottom: 38rem;                          
+                        }
+                        .__subttl {                       
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 42rem;
+                            padding-bottom: 18rem;                      
+                            .bio__ttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 24rem;                           
+                                text-align: left;
+                                color: #404040;                                                   
+                            }
+                            .pr-30 {
+                                padding-right: 30rem;
+                            }
+                            .bio__subttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 24rem;                            
+                                text-align: left;
+                                color: #404040;                           
+                            }
+                        }
+                    }
+                    .__outer-text--sp {
+                        font-family: YuMincho;
+                        font-weight: 500;
+                        font-size: 32rem;
+                        letter-spacing: 0.1em;
+                        line-height: 35.85px;
+                        text-align: left;
+                        color: #404040;
+                        padding-bottom: 20rem;   
+                        border-bottom: 1px solid rgba(120, 116, 113, 0.42);
+                        border-bottom-width: 100%;
+                        padding-right: 56rem;  
+                        padding-top: 38rem;                 
+                    }
+                    .__outer-bottom--sp {
+                        padding-top: 32rem;
+                        padding-right: 56rem;  
+                        font-family: YuGothic;
+                        font-weight: 500;
+                        font-size: 24rem;
+                        line-height: 21px;
+                        text-align: left;
+                        color: #404040;
+                        line-height: 1.5;
+                    }
+
+                } 
                 .__outer-item {
                     display: flex;
                     align-items: flex-start;
@@ -2343,18 +2816,11 @@ header{
                     justify-content: space-between;
                     figure {
                         width: 450rem;
-                        justify-content: flex-end;
-                        @include media-sp {
-                            width: 100%;
-                            justify-content: flex-start;
-                        }
+                        justify-content: flex-end;                       
                     }
                     .__item-group {
                         width: calc(100% - 570rem);
-                        background: #fcfcfc;
-                        @include media-sp {
-                            width: 100%;
-                        }
+                        background: #fcfcfc;                        
                         .__item-ttl {
                             font-family: YuMincho;
                             font-weight: 500;
@@ -2382,11 +2848,7 @@ header{
                     padding-left: 100rem;
                     margin-top: 180rem;                    
                     .__inner-text {
-                        background: #fcfcfc;
-                        @include media-sp {
-                            width: 100%;
-                            justify-content: flex-start;
-                        }
+                        background: #fcfcfc;                       
                         width: calc(100% - 570rem);
                         display: flex;
                         flex-direction: column;
@@ -2414,10 +2876,7 @@ header{
                             }
                             @include media-pc {
                                 font-size: 18rem;
-                            }
-                            @include media-sp {
-                                font-size: 16rem;
-                            }
+                            }                           
                             .fs-36 {
                                 font-size: 36px;
                                 font-family: YuMincho;
@@ -2427,10 +2886,7 @@ header{
                                 color: #404040;
                                 @include media-pc {
                                     font-size: 36rem;
-                                }
-                                @include media-sp {
-                                    font-size: 30rem;
-                                }
+                                }                               
                             }
                             span {
                                 font-family: Marcellus,serif;
@@ -2442,11 +2898,7 @@ header{
                                 @include media-pc {
                                     font-size: 11rem;
                                     padding-top: 15rem;
-                                }
-                                @include media-sp {
-                                    font-size: 11rem;
-                                    padding-top: 15rem;
-                                }
+                                }                               
                             }    
                         }
                         .__biography {
@@ -2466,12 +2918,7 @@ header{
                                 width: 49rem;
                                 height: 26rem;
                                 font-size: 14rem;
-                            }
-                            @include media-sp {
-                                width: 49rem;
-                                height: 26rem;
-                                font-size: 14rem;
-                            }
+                            }                           
                         }
                         .__subttl {
                             display: flex;
@@ -2479,10 +2926,7 @@ header{
                             gap: 65rem;  
                             @include media-pc {
                                 gap: 60rem;  
-                            }
-                            @include media-sp {
-                                gap: 20rem;  
-                            }                 
+                            }                                     
                             .bio__ttl {
                                 font-family: YuGothic;
                                 font-weight: 500;
@@ -2495,12 +2939,7 @@ header{
                                     font-size: 14rem;
                                     padding-top: 17rem;
                                     width: 50rem;
-                                }
-                                @include media-sp {
-                                    font-size: 15rem;
-                                    padding-top: 17rem;
-                                    width: 50rem;
-                                }                 
+                                }                                        
                             }
                             .bio__subttl {
                                 font-family: YuGothic;
@@ -2510,10 +2949,7 @@ header{
                                 color: #404040;
                                 @include media-pc {
                                     font-size: 14rem;                              
-                                }
-                                @include media-sp {
-                                    font-size: 16rem;                             
-                                }                 
+                                }                                           
                             }
                         }     
                         .__item-ttl {
@@ -2537,13 +2973,107 @@ header{
                     figure {
                        width: 450rem;
                        justify-content: flex-end;
-                       padding-top: 30rem;
-                        @include media-sp {
-                            width: 100%;
+                       padding-top: 30rem;                       
+                    }
+                }    
+                .__main-item--sp {
+                    .sp-main {
+                        display: flex;  
+                        gap: 55rem;
+                        padding-top: 110rem;
+                        figure {
+                            width: 296rem;
+                            img {
+                                max-width: 100%;
+                            }
+                        }
+                        .__bgttl {
+                            display: flex;
+                            flex-direction: column;
                             justify-content: flex-start;
+                            font-family: YuMincho;
+                            font-weight: 500;
+                            font-size: 36rem;
+                            letter-spacing: 0.1em;   
+                            color: #404040;                       
+                            padding-top: 100rem;
+                            .fs-36 {
+                                font-family: YuMincho;
+                                font-weight: 500;
+                                font-size: 36rem;
+                                letter-spacing: 0.1em;                           
+                                text-align: left;
+                                color: #404040;
+                                line-height: 40.85px;   
+                            }
+                            .fs-sp--font {
+                                font-family: Marcellus,serif;
+                                font-weight: normal;
+                                font-size: 22rem;
+                                letter-spacing: 0.12em;  
+                                color: #fba443; 
+                                padding-top: 25rem; 
+                            }
                         }
                     }
-                }      
+                    .__outer-text {
+                        margin-top: 40rem;
+                        padding-left: 40rem;
+                        .__biography {
+                            font-family: YuGothic;
+                            font-weight: bold;
+                            font-size: 28rem;
+                            letter-spacing: 0.04em;
+                            color: #696459;
+                            width: 98rem;
+                            height: 52rem;
+                            border-radius: 5px;
+                            background: #e9e3d3;
+                            @include flex-hc-vc;
+                            margin-bottom: 38rem;
+                        }
+                        .__subttl {
+                            display: flex;
+                            align-items: flex-start;
+                            gap: 42rem;
+                            padding-bottom: 18rem;
+                            .bio__ttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 24rem;
+                                color: #404040;
+                                prefix: 30rem;
+                            }
+                            .bio__subttl {
+                                font-family: YuGothic;
+                                font-weight: 500;
+                                font-size: 24rem;                            
+                                color: #404040;
+                            }
+
+                        }
+                        .__item-ttl {
+                            padding-top: 20rem;
+                            font-family: YuMincho;
+                            font-weight: 500;
+                            font-size: 32rem;
+                            letter-spacing: 0.1em;                          
+                            color: #404040;
+                            padding-bottom: 20rem;
+                            width: 100%;
+                            border-bottom: 1px solid rgba(120, 116, 113, 0.42);
+                        }
+                        .__item-subttl {
+                            font-family: YuGothic;
+                            font-weight: 500;
+                            font-size: 24rem;                          
+                            text-align: left;
+                            color: #404040;
+                            padding-top: 32rem;
+                            line-height: 1.5;
+                        }
+                    }
+                }  
             }
         }
     }
@@ -2554,8 +3084,14 @@ header{
         padding-bottom: 127rem;
         display: flex;
         flex-wrap: wrap;   
-        gap: 30px 36px;
+        gap: 30rem 36rem;
         justify-content: center;
+        @include media-sp {
+            padding-left: 30rem;
+            padding-right: 30rem;
+            padding-top: 32rem;
+            padding-bottom: 0rem;
+        }
         &__item {
             padding-top: 28px;
             padding-left: 27px;
@@ -2564,14 +3100,24 @@ header{
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            @include media-sp {
+                width: 100%;
+                padding-top: 58rem;
+                padding-left: 40rem;
+                padding-right: 66rem;
+                padding-bottom: 66rem;        
+            }
             .__item-ttl {               
                 font-family: YuMincho;
                 font-weight: 500;
                 font-size: 13px;
-                letter-spacing: 0.1em;
-                line-height: 35.85px;             
+                letter-spacing: 0.1em;                      
                 color: #404040;
                 padding-bottom: 10px;
+                @include media-sp {
+                    font-size: 26rem;
+                    line-height: 1.5;
+                }
             }  
             .__item-bgttl {              
                 font-family: YuMincho;
@@ -2580,23 +3126,33 @@ header{
                 letter-spacing: 0.1em;
                 line-height: 35.85px;              
                 color: #404040;
+                @include media-sp {
+                    font-size: 44rem;
+                    line-height: 1.5;
+                }
             }
             .__item-smttl {
                 font-family: Marcellus,serif;
                 font-weight: normal;
                 font-size: 11px;
-                letter-spacing: 0.12em;
-                line-height: 67.95px;             
+                letter-spacing: 0.12em;                       
                 color: #fba443;
                 position: relative;
+                @include media-sp {
+                    font-size: 22rem;
+                    line-height: 1.5;
+                }
                 &::after {
                     content: "";
                     position: absolute;
                     left: 0;
-                    bottom: 10px;
+                    bottom: -6px;
                     width: 292px;
                     height: 1px;
-                    background: rgba(120, 116, 113, 0.42);                    
+                    background: rgba(120, 116, 113, 0.42); 
+                    @include media-sp {
+                        position: unset;
+                    }                   
                 }
             }
             .more__btn {
@@ -2612,15 +3168,26 @@ header{
                 line-height: 26.38px;                       
                 color: #696459;
                 margin-bottom: 24px;
+                margin-top: 17px;
+                @include media-sp {
+                    margin-top: 36rem;
+                    width: 98rem;
+                    height: 52rem;
+                    font-size: 28rem;
+                    margin-bottom: 20rem;
+                }
             }
             .__item-text {
                 display: flex;
                 flex-direction: column;
-                justify-content: flex-start;
+                justify-content: flex-start;             
                 .__text {
                     display: flex;
                     align-items: center;
                     gap: 5px;
+                    @include media-sp {
+                        gap: 20rem;
+                    }
                     .__ttl {
                         font-family: YuGothic;
                         font-weight: 500;
@@ -2628,7 +3195,8 @@ header{
                         line-height: 25.85px;                   
                         color: #404040;
                         @include media-sp {
-                            font-size: 17rem;
+                            font-size: 26rem;   
+                            line-height: 1.5;                     
                         }
                     }
                     .__subttl {
@@ -2638,7 +3206,8 @@ header{
                         line-height: 25.85px;                   
                         color: #404040;
                         @include media-sp {
-                            font-size: 17rem;
+                            font-size: 26rem;   
+                            line-height: 21.85px;                     
                         }
                     }
                 }
@@ -2647,12 +3216,108 @@ header{
       
     }
     .p-swiper {
-        padding-top: 100rem;
+        html,
+        body {
+          position: relative;
+          height: 100%;
+        }     
+    
+        .swiper {
+          width: 100%;
+          height: 100%;
+        }
+    
+        .swiper-slide {
+          text-align: center;
+          font-size: 18px;
+          background: #fff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+    
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+        
+        .swiper {
+          width: 100%;
+          height: auto;
+          margin-left: auto;
+          margin-right: auto;
+        }
+    
+        .swiper-slide {
+          background-size: cover;
+          background-position: center;
+        }
+    
+        .mySwiper2 {
+          height: 80%;
+          width: 100%;
+        }
+    
+        .mySwiper {
+          height: 20%;
+          box-sizing: border-box;
+          padding: 10px 0;
+        }
+    
+        .mySwiper .swiper-slide {
+          width: 25%;
+          height: 100%;
+          opacity: 0.4;
+        }
+    
+        .mySwiper .swiper-slide-thumb-active {
+          opacity: 1;
+        }
+    
+        .swiper-slide img {
+          display: block;
+          width: 100%;
+          height: 25%;
+          object-fit: cover;
+        }
+
+        .swiper-button-next, .swiper-button-prev{
+          color: #707070 !important;
+        }
+
+        .swiper-button-next, .swiper-rtl .swiper-button-prev {
+          right: var(--swiper-navigation-sides-offset,-20px);
+          left: auto;
+          width: 30px;
+          height: 0px;
+          @include media-sp {
+            top: 300rem;
+          }   
+                          
+      }
+      .swiper-button-prev, .swiper-rtl .swiper-button-next {
+        left: var(--swiper-navigation-sides-offset,-20px);
+        right: auto;
+        width: 30px;
+        height: 0px;
+        @include media-sp {
+            top: 300rem;
+        }        
+    }
+      .swiper-slide {
+        display: flex;
+        align-items: flex-start;
+        margin-top: 10rem;
+    }   padding-top: 100rem;
         padding-bottom: 158rem; 
         background: #fafafa;
         @include media-sp {
-            padding-top: 100rem;
-            padding-bottom: 50rem;
+            padding-top: 50rem;
+            padding-bottom: 0rem;
+            padding-left: 21rem;
+            padding-right: 28rem;
         }    
         &__ttl {
             font-family: YuGothic;
@@ -2666,8 +3331,9 @@ header{
             margin: 0 auto;
             position: relative;
             @include media-sp {
-                font-size: 32rem;
-                padding-bottom: 9rem;
+                font-size: 48rem;
+                padding-bottom: 4rem; 
+                margin-top: 100rem;           
             }
             &::before {
                 content: "";
@@ -2680,7 +3346,7 @@ header{
                 height: 27px;
                 @include media-sp {
                     top: -10rem;
-                    left: -34rem;
+                    left: -57rem;
                 }
             }
         }      
@@ -2692,22 +3358,28 @@ header{
             text-align: center;
             color: #fba443;         
             @include media-sp {
-                font-size: 16rem;
+                font-size: 20rem;
             }
         }
         &__contents {
             margin-left: 300rem;
             margin-right: 300rem;
             padding-top: 74rem;
+            padding-left: 40rem;
+            padding-right: 40rem;
             position: relative;
             @include media-sp {
-                padding-left: 20rem;
-                padding-right: 20rem;
-                padding-top: 75rem;
+                margin-left: 20rem;
+                margin-right: 20rem;
+                padding-top: 34rem;
+                margin-bottom: 100rem;
             }
         }
     }
     .p-equipment{
+        @include media-sp {
+            display: none;
+        }
         padding-top: 114rem;
         padding-bottom: 103rem;
         @include media-sp{
@@ -2747,7 +3419,7 @@ header{
         margin-right: auto;
         width: 100%;
         @include media-sp {
-            padding-top: 25rem;
+            padding-top: 82rem;
             width: 100%;
             padding-left: 20rem;
             padding-right: 20rem;
@@ -2765,8 +3437,8 @@ header{
             margin: 0 auto;
             position: relative;
             @include media-sp {
-                font-size: 32rem;
-                padding-bottom: 9rem;
+                font-size: 48rem;
+                padding-bottom: 4rem;
             }
             &::before {
                 content: "";
@@ -2779,7 +3451,7 @@ header{
                 height: 27px;
                 @include media-sp {
                     top: -10rem;
-                    left: -34rem;
+                    left: -57rem;
                 }
             }
         }      
@@ -2791,8 +3463,8 @@ header{
             text-align: center;
             color: #fba443;  
             @include media-sp {
-                font-size: 16rem;
-                padding-bottom: 35rem;
+                font-size: 20rem;
+                padding-bottom: 62rem;
             }
         }
         &__address {
@@ -2806,17 +3478,17 @@ header{
             font-size: 27px;
             line-height: 48px;        
             color: #635146;
-            @include media-sp {
-                padding-top: 30rem;
-                padding-bottom: 30rem;
-                font-size: 27rem;
-                line-height: 2;
+            @include media-sp {           
+                padding-bottom: 48rem;
+                font-size: 38rem;
+                line-height: 1.5;
+                padding-top: 0;
             }
         }
         &__contents {
             iframe{
-                width: 100%;
-                height: 450rem;
+                width: 100%; 
+                height: 450rem;              
             }
         }
     }
@@ -2832,10 +3504,10 @@ header{
         width: 100%; 
         @include media-sp {
             padding-top: 44rem;
-            padding-bottom: 75rem;
+            padding-bottom: 70rem;
             width: 100%;
-            padding-left: 20rem;
-            padding-right: 20rem;
+            padding-left: 38rem;
+            padding-right: 38rem;
         }   
         &__ttl {
             font-family: YuGothic;
@@ -2846,17 +3518,18 @@ header{
             color: #696459;
             padding-bottom: 27rem;
             @include media-sp {
-                font-size: 25rem;
-                padding-bottom: 34rem;
+                font-size: 40rem;
+                padding-bottom: 32rem;
             }
         }
         table {
             border-radius: 10px;
             background: #fff;
-            padding-top: 41rem;
-            padding-right: 60rem;
-            padding-bottom: 43rem;
-            padding-left: 62rem;
+            padding-top: 32rem;
+            padding-right: 43rem;
+            padding-bottom: 34rem;
+            padding-left: 40rem;
+            background: #fff;
             th,td {
                 font-family: YuMincho;
                 font-weight: 500;
@@ -2864,17 +3537,26 @@ header{
                 line-height: 59px;            
                 color: #696459;  
                 @include media-sp {
-                    font-size: 22rem;
+                    font-size: 32rem;
+                    line-height: 43px;
                 } 
                 img {
                     width: 22px;
                     height: 22px;
                     @include media-sp {
-                        width: 22rem;
-                        height: 22rem;
+                        width: 32rem;
+                        height: 32rem;
                     }
                 }
-            }               
+            }  
+            .td__time {
+                font-size: 30rem;
+                line-height: 22px;
+                display: flex;
+                flex-direction: column;
+                justify-content: flex-end;
+                line-height: 1.5;
+            }             
         }   
         .__time-table {
             padding-top: 34rem;
@@ -2885,6 +3567,10 @@ header{
             letter-spacing: -0.03em;
             line-height: 15px;     
             color: #696459;
+            @include media-sp {
+                font-size: 24rem;
+                line-height: 11px;
+            }
         }         
     }
     .p-infor {
@@ -2920,6 +3606,9 @@ header{
                 width: 1px;            
                 height: 32px;           
                 background:#8c8474;
+                @include media-sp {
+                    height: 20rem;
+                }
             }
         }
         &__subttl {    
@@ -2938,6 +3627,7 @@ header{
             border: 1px solid #f4efe9;
             @include media-sp {
                 font-size: 18rem;
+                line-height: 1.5;
             }    
             .pt-15 {
                 padding-top: 15px;
@@ -2958,6 +3648,9 @@ header{
             font-size: 14px;
             text-align: center;
             color: #fff;
+            @include media-sp {
+                font-size: 26rem;
+            }
         }
     }
 }
