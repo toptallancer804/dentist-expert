@@ -679,7 +679,7 @@ html.has-scroll-dragging {
     width: 220rem;
     height: 84rem;
     font-size: 24rem;
-    line-height: 1.2;
+    line-height: 1.25;
     text-align: center;
     padding: 0;
     justify-content: center;
@@ -737,7 +737,7 @@ html.has-scroll-dragging {
     width: 220rem;
     height: 84rem;
     font-size: 24rem;
-    line-height: 1.2;
+    line-height: 1.25;
     text-align: center;
     padding: 0;
     justify-content: center;
@@ -779,6 +779,7 @@ header .__item-top--sp {
     display: flex;
     justify-content: flex-end;
     padding-right: 27rem;
+    margin-top: -25rem;
   }
 }
 @media screen and (max-width: 767px) {
@@ -786,6 +787,7 @@ header .__item-top--sp {
     justify-content: flex-start;
     padding-left: 16rem;
     padding-right: 14rem;
+    margin-top: 0;
   }
 }
 header .__item-top .__item-ttl {
@@ -880,6 +882,11 @@ header .__item-top .__item-phone .__number {
   right: 0;
   max-height: 100%;
 }
+@media screen and (max-width: 767px) {
+  .p-main .p-fv figure {
+    height: 100%;
+  }
+}
 .p-main .p-fv__contents {
   padding: 75rem 0 170rem 173rem;
 }
@@ -924,7 +931,7 @@ header .__item-top .__item-phone .__number {
     padding-top: 12rem;
     padding-left: 0;
     font-size: 46rem;
-    line-height: 1.2;
+    line-height: 1.347826087;
     padding-bottom: 0;
     position: relative;
   }
@@ -1057,20 +1064,15 @@ header .__item-top .__item-phone .__number {
 }
 .p-main .p-treatment {
   position: relative;
-}
-.p-main .p-treatment .__treatment {
+  background: url(../img/hospital.jpg) no-repeat;
+  height: 384px;
   background-size: cover;
   background-position: center;
-  position: relative;
-  height: 384rem;
 }
 @media screen and (max-width: 767px) {
-  .p-main .p-treatment .__treatment {
+  .p-main .p-treatment {
     height: 384rem;
   }
-}
-.p-main .p-treatment .__treatment img {
-  width: 100%;
 }
 .p-main .p-treatment__contents {
   background: #fff;
@@ -1355,7 +1357,7 @@ header .__item-top .__item-phone .__number {
   .p-main .p-trouble__text .__text .__text-icon .__subttl {
     font-size: 24rem;
     padding-left: 14rem;
-    line-height: 15.62px;
+    line-height: 1.3016666667;
   }
 }
 @media screen and (max-width: 767px) {
@@ -1403,7 +1405,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-solve__ttl {
     font-size: 48rem;
-    line-height: 1.2;
+    line-height: 1.5;
   }
 }
 .p-main .p-solve__ttl .s-color {
@@ -2096,6 +2098,47 @@ header .__item-top .__item-phone .__number {
     font-size: 28rem;
   }
 }
+.p-main .p-cost__contents--sp .sp__contents .sp__contents-btn {
+  margin: 0 auto;
+  margin-top: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: YuMincho;
+  font-weight: 500;
+  font-size: 28px;
+  letter-spacing: -0.02em;
+  line-height: 115.59px;
+  color: #fff;
+  width: 500px;
+  height: 93px;
+  background: #ea6a54;
+  border-radius: 10px;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-cost__contents--sp .sp__contents .sp__contents-btn {
+    margin-top: 55rem;
+    font-size: 28rem;
+    width: 500rem;
+    height: 93rem;
+  }
+}
+.p-main .p-cost__contents--sp .sp__contents .sp__contents-btn::after {
+  content: "";
+  position: absolute;
+  background: url(../img/arrow_right_01.png);
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 10px;
+  height: 19px;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-cost__contents--sp .sp__contents .sp__contents-btn::after {
+    right: 30rem;
+  }
+}
 .p-main .p-alignment {
   padding-left: 240rem;
   padding-right: 240rem;
@@ -2213,15 +2256,14 @@ header .__item-top .__item-phone .__number {
 .p-main .p-case {
   padding-top: 100px;
   padding-bottom: 137px;
-  background: #f4ede5;
-  margin-top: -70rem;
+  background: rgba(244, 237, 229, 0.3);
 }
 @media screen and (max-width: 767px) {
   .p-main .p-case {
     padding-top: 90rem;
     padding-bottom: 116rem;
-    padding-left: 116rem;
-    padding-right: 116rem;
+    padding-left: 0;
+    padding-right: o;
   }
 }
 .p-main .p-case__ttl {
@@ -2256,7 +2298,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-case__ttl::before {
     top: -10rem;
-    left: -34rem;
+    left: -75rem;
   }
 }
 .p-main .p-case__subttl {
@@ -2273,6 +2315,8 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-case__contents {
+  padding-left: 180rem;
+  padding-right: 180rem;
   padding-top: 53rem;
   display: flex;
   flex-wrap: wrap;
@@ -2286,11 +2330,10 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-case__contents {
-    background: #fff;
     margin-top: 86rem;
     padding-top: 44rem;
-    padding-left: 62rem;
-    padding-right: 62rem;
+    padding-left: 0rem;
+    padding-right: 0rem;
     padding-top: 50rem;
   }
 }
@@ -2468,6 +2511,12 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-case__contents .__item-ttl .__item-flex .__price {
     font-size: 24rem;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-case__contents .swiper-slide {
+    padding: 22rem 30rem;
+    background: #fff;
   }
 }
 .p-main .p-healing {
@@ -2684,7 +2733,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-orthodontist__ttl::after {
-    top: 35rem;
+    top: 150rem;
   }
 }
 @media screen and (max-width: 1290px) {
@@ -2946,7 +2995,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-plan__ttl::before {
     top: -10rem;
-    left: -34rem;
+    left: -75rem;
   }
 }
 .p-main .p-plan__subttl {
@@ -3012,7 +3061,7 @@ header .__item-top .__item-phone .__number {
   font-family: "Noto Serif JP", serif;
   font-weight: 600;
   font-size: 36px;
-  line-height: 46px;
+  line-height: 1.2777777778;
   text-align: center;
   color: #fba443;
   display: flex;
@@ -3037,6 +3086,9 @@ header .__item-top .__item-phone .__number {
 .p-main .p-plan__contents .__wrap .__wrap-ttl span {
   font-size: 40rem;
   line-height: 26px;
+}
+.p-main .p-plan__contents .__wrap .text-color {
+  color: #f5aca3;
 }
 .p-main .p-plan__contents .__wrap .__wrap-price {
   font-family: "Noto Serif JP", serif;
@@ -3227,6 +3279,9 @@ header .__item-top .__item-phone .__number {
     line-height: 1.5;
   }
 }
+.p-main .p-plan__contents .br-color {
+  border: 5px solid rgba(245, 172, 163, 0.25);
+}
 .p-main .p-plan__contents .__wrap-age {
   display: flex;
   justify-content: center;
@@ -3245,7 +3300,7 @@ header .__item-top .__item-phone .__number {
     padding-bottom: 36rem;
     height: 60rem;
     border-radius: 30px;
-    background: #f5aca3;
+    background: rgba(245, 172, 163, 0.1);
     margin-top: 42rem;
     margin-bottom: 36rem;
     height: 120rem;
@@ -3360,7 +3415,7 @@ header .__item-top .__item-phone .__number {
   padding-top: 72rem;
   display: flex;
   flex-wrap: wrap;
-  gap: 142rem 104rem;
+  gap: 20rem 104rem;
 }
 @media screen and (max-width: 1290px) {
   .p-main .p-question__contents {
@@ -3388,7 +3443,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-question__contents .__items {
     width: 100%;
-    padding: 60rem 0;
+    padding: 15rem 0;
   }
 }
 .p-main .p-question__contents .__inner-items {
@@ -3435,7 +3490,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-question__contents .__inner-items--answer .__intro {
     font-size: 28rem;
-    line-height: 22.85px;
+    line-height: 1.7035714286;
   }
 }
 .p-main .p-question__contents .__inner-items .__inner {
@@ -3473,8 +3528,8 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-question__contents .__inner-items .__intro {
     padding-right: 0;
-    font-size: 36rem;
-    line-height: 22.85px;
+    font-size: 28rem;
+    line-height: 1.6321428571;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
@@ -3562,10 +3617,6 @@ header .__item-top .__item-phone .__number {
     padding-top: 110rem;
   }
 }
-.p-main .p-intro__container {
-  padding-left: 90rem;
-  padding-right: 90rem;
-}
 @media screen and (max-width: 767px) {
   .p-main .p-intro__container {
     padding-left: 0;
@@ -3613,12 +3664,27 @@ header .__item-top .__item-phone .__number {
     bottom: -40rem;
   }
 }
+.p-main .p-intro__container__contents {
+  padding-left: 90rem;
+  padding-right: 90rem;
+  position: relative;
+}
 @media screen and (max-width: 767px) {
   .p-main .p-intro__container__contents {
     padding-left: 0rem;
     padding-right: 0rem;
     padding-bottom: 78rem;
   }
+}
+.p-main .p-intro__container__contents::after {
+  content: "";
+  background: #fcfcfc;
+  position: absolute;
+  right: 0;
+  top: 45rem;
+  height: 690rem;
+  width: 70%;
+  z-index: -1;
 }
 .p-main .p-intro__container__contents .__inner-item {
   display: flex;
@@ -3635,7 +3701,6 @@ header .__item-top .__item-phone .__number {
   flex-direction: column;
   justify-content: flex-start;
   padding-bottom: 22rem;
-  background: #fcfcfc;
 }
 .p-main .p-intro__container__contents .__inner-item .__inner-text .__bgttl {
   font-family: YuMincho;
@@ -3752,11 +3817,14 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-intro__container__contents .__inner-item--sp {
-  padding-left: 40rem;
+  background: #fcfcfc;
+  margin-bottom: 25rem;
+  padding-bottom: 40rem;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .sp--inner {
   display: flex;
   justify-content: space-between;
+  padding-left: 20rem;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .sp--inner figure {
   width: 296rem;
@@ -3785,13 +3853,16 @@ header .__item-top .__item-phone .__number {
   line-height: 40.85px;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .sp--inner .__bgttl .fs-color {
-  padding-top: 31rem;
+  padding-top: 20rem;
   font-family: Marcellus;
   font-weight: normal;
   font-size: 22rem;
   letter-spacing: 0.12em;
   text-align: left;
   color: #fba443;
+}
+.p-main .p-intro__container__contents .__inner-item--sp .__inner-text--sp {
+  padding-left: 20rem;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .__inner-text--sp .__biography {
   margin-top: 88rem;
@@ -3835,6 +3906,7 @@ header .__item-top .__item-phone .__number {
   color: #404040;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .__outer-text--sp {
+  padding-left: 20rem;
   font-family: YuMincho;
   font-weight: 500;
   font-size: 32rem;
@@ -3849,6 +3921,7 @@ header .__item-top .__item-phone .__number {
   padding-top: 38rem;
 }
 .p-main .p-intro__container__contents .__inner-item--sp .__outer-bottom--sp {
+  padding-left: 20rem;
   padding-top: 32rem;
   padding-right: 56rem;
   font-family: YuGothic;
@@ -3898,9 +3971,24 @@ header .__item-top .__item-phone .__number {
   justify-content: space-between;
   padding-left: 100rem;
   margin-top: 180rem;
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-intro__container__contents .__main-item {
+    background: #fcfcfc;
+  }
+}
+.p-main .p-intro__container__contents .__main-item::before {
+  content: "";
+  background: #fcfcfc;
+  position: absolute;
+  left: 0;
+  top: -25rem;
+  height: 690rem;
+  width: 80%;
+  z-index: -1;
 }
 .p-main .p-intro__container__contents .__main-item .__inner-text {
-  background: #fcfcfc;
   width: calc(100% - 570rem);
   display: flex;
   flex-direction: column;
@@ -4043,10 +4131,14 @@ header .__item-top .__item-phone .__number {
   justify-content: flex-end;
   padding-top: 30rem;
 }
+.p-main .p-intro__container__contents .__main-item--sp {
+  background: #fcfcfc;
+  margin-top: 40rem;
+}
 .p-main .p-intro__container__contents .__main-item--sp .sp-main {
   display: flex;
   gap: 55rem;
-  padding-top: 110rem;
+  margin-top: 110rem;
 }
 .p-main .p-intro__container__contents .__main-item--sp .sp-main figure {
   width: 296rem;
@@ -4080,7 +4172,7 @@ header .__item-top .__item-phone .__number {
   font-size: 22rem;
   letter-spacing: 0.12em;
   color: #fba443;
-  padding-top: 25rem;
+  padding-top: 20rem;
 }
 .p-main .p-intro__container__contents .__main-item--sp .__outer-text {
   margin-top: 40rem;
@@ -4166,6 +4258,7 @@ header .__item-top .__item-phone .__number {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  background: #fcfcfc;
 }
 @media screen and (max-width: 767px) {
   .p-main .p-dentist__item {
@@ -4342,6 +4435,20 @@ header .__item-top .__item-phone .__number {
   height: 80%;
   width: 100%;
 }
+.p-main .p-swiper .mySwiper1 .swiper-slide-thumb-active img {
+  border: 5px solid #f7c594;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-swiper .mySwiper1 .swiper-slide-thumb-active img {
+    border: none;
+    opacity: 1 !important;
+  }
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-swiper .mySwiper1 .swiper-slide-visible img {
+    opacity: 0.2;
+  }
+}
 .p-main .p-swiper .mySwiper {
   height: 20%;
   box-sizing: border-box;
@@ -4511,11 +4618,8 @@ header .__item-top .__item-phone .__number {
 .p-main .p-map {
   background: #fafafa;
   padding-top: 100rem;
-  max-width: 840rem;
   padding-left: 20rem;
   padding-right: 20rem;
-  margin-left: auto;
-  margin-right: auto;
   width: 100%;
 }
 @media screen and (max-width: 767px) {
@@ -4525,6 +4629,11 @@ header .__item-top .__item-phone .__number {
     padding-left: 20rem;
     padding-right: 20rem;
   }
+}
+.p-main .p-map__container {
+  max-width: 840rem;
+  margin-left: auto;
+  margin-right: auto;
 }
 .p-main .p-map__ttl {
   font-family: YuGothic;
@@ -4603,12 +4712,7 @@ header .__item-top .__item-phone .__number {
   background: #fafafa;
   padding-top: 88rem;
   padding-bottom: 105rem;
-  max-width: 840px;
-  padding-left: 20px;
-  padding-right: 20px;
-  margin-left: auto;
-  margin-right: auto;
-  width: 100%;
+  margin: 0 auto;
 }
 @media screen and (max-width: 767px) {
   .p-main .p-time {
@@ -4618,6 +4722,10 @@ header .__item-top .__item-phone .__number {
     padding-left: 38rem;
     padding-right: 38rem;
   }
+}
+.p-main .p-time-container {
+  margin-left: auto;
+  margin-right: auto;
 }
 .p-main .p-time__ttl {
   font-family: YuGothic;
@@ -4635,13 +4743,24 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-time table {
-  border-radius: 10px;
+  padding-top: 41rem;
+  padding-right: 60rem;
+  padding-bottom: 43rem;
+  padding-left: 62rem;
   background: #fff;
-  padding-top: 32rem;
-  padding-right: 43rem;
-  padding-bottom: 34rem;
-  padding-left: 40rem;
-  background: #fff;
+  max-width: 840px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-time table {
+    border-radius: 10px;
+    background: #fff;
+    padding-top: 32rem;
+    padding-right: 43rem;
+    padding-bottom: 34rem;
+    padding-left: 40rem;
+    background: #fff;
+  }
 }
 .p-main .p-time table th, .p-main .p-time table td {
   font-family: YuMincho;
@@ -4667,12 +4786,22 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-time table .td__time {
-  font-size: 30rem;
-  line-height: 22px;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  line-height: 1.5;
+  font-family: YuGothic;
+  font-weight: 500;
+  font-size: 21px;
+  line-height: 2.6666666667;
+  text-align: center;
+  color: #696459;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-time table .td__time {
+    font-size: 30rem;
+    line-height: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    line-height: 2.5;
+  }
 }
 .p-main .p-time .__time-table {
   padding-top: 34rem;
@@ -4752,7 +4881,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-infor__subttl {
-    font-size: 18rem;
+    font-size: 28rem;
     line-height: 1.5;
   }
 }
@@ -4772,6 +4901,11 @@ header .__item-top .__item-phone .__number {
   justify-content: center;
   align-items: center;
 }
+@media screen and (max-width: 767px) {
+  .p-main .p-footer {
+    margin-bottom: 142rem;
+  }
+}
 .p-main .p-footer__ttl {
   font-family: YuGothic;
   font-weight: 500;
@@ -4783,4 +4917,111 @@ header .__item-top .__item-phone .__number {
   .p-main .p-footer__ttl {
     font-size: 26rem;
   }
+}
+
+.fix-text__flex {
+  padding-left: 20rem;
+  padding-right: 20rem;
+  padding-top: 20rem;
+  padding-bottom: 26rem;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 999;
+  background: #f2f2f2;
+  height: 142rem;
+  width: 100%;
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  gap: 18rem;
+}
+.fix-text__flex__btn {
+  display: flex;
+  align-items: center;
+  gap: 20rem;
+}
+.fix-text__flex__btn .__web {
+  font-family: YuGothic;
+  font-weight: bold;
+  font-size: 24rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1666666667;
+  text-align: center;
+  color: #ea6a54;
+  width: 190rem;
+  height: 84rem;
+  background: #fff;
+  border: 1px solid #ea6a54;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fix-text__flex__btn .__line {
+  font-family: YuGothic;
+  font-weight: bold;
+  font-size: 24rem;
+  letter-spacing: -0.02em;
+  line-height: 1.1666666667;
+  text-align: center;
+  color: #fff;
+  width: 190rem;
+  height: 84rem;
+  background: #ea6a54;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.fix-text__flex__phone {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.fix-text__flex__phone .__phone {
+  display: flex;
+  align-items: center;
+}
+.fix-text__flex__phone .__phone figure {
+  width: 30rem;
+  height: 32rem;
+}
+.fix-text__flex__phone .__phone .__number {
+  font-family: Marcellus, serif;
+  font-weight: normal;
+  font-size: 42rem;
+  letter-spacing: -0.02em;
+  line-height: 2;
+  text-align: center;
+  color: #635146;
+}
+.fix-text__flex__phone .__day {
+  display: flex;
+  align-items: center;
+  gap: 8rem;
+}
+.fix-text__flex__phone .__day-item {
+  font-family: YuGothic;
+  font-weight: bold;
+  font-size: 16rem;
+  letter-spacing: 0.04em;
+  line-height: 1.625;
+  color: #696459;
+  width: 46rem;
+  height: 28rem;
+  background: #e9e3d3;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.fix-text__flex__phone .__day-time {
+  font-family: YuGothic;
+  font-weight: 500;
+  font-size: 20rem;
+  line-height: 1.4;
+  color: #404040;
 }/*# sourceMappingURL=style.css.map */
