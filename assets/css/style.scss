@@ -281,6 +281,7 @@ header{
                     padding-bottom: 14rem;
                     padding-left: 0;
                     font-size: 22rem;
+                    margin-top: -20rem;
                 }
             }
             .__ttl {
@@ -380,7 +381,7 @@ header{
                         padding-top: 16px;
                         @include media-sp{
                             padding-top: 16rem;
-                            font-size: 16rem;
+                            font-size: 14rem;
                             line-height: 1.5;
 
                         }
@@ -445,7 +446,7 @@ header{
             border-radius: 10px;
             @include media-sp {
                 top: -100rem;
-                padding: 33rem 64rem 48rem 60rem;              
+                padding: 32rem 56rem 48rem 50rem;              
             }
             &-top {
                 display: flex;
@@ -556,7 +557,7 @@ header{
                 padding-left: 96rem;
                 padding-right: 27rem;
                 @include media-sp {
-                    padding-left: 6rem;
+                    padding-left: 0;
                     padding-right: 0;
                 }
                 .treatment__line {
@@ -575,7 +576,7 @@ header{
                     position: relative;
                     transition: all ease 0.3s; 
                     @include media-sp {
-                        font-size: 36rem;
+                        font-size: 34rem;
                         width: 536rem;
                         height: 100rem;
                     }
@@ -596,7 +597,7 @@ header{
                     span {
                         font-size: 34px;
                         @include media-sp {
-                            font-size: 46rem;
+                            font-size: 40rem;
                         }
                     }
                     &::after {
@@ -643,7 +644,7 @@ header{
                     line-height: calc(33/22);               
                 }
                 .t-color {
-                    color: #ea6a54;
+                    color: #FBA443;
                 }
             }
             .__text {
@@ -729,12 +730,28 @@ header{
             }
             .pb-80 {
                 color: #635146;
-                padding-bottom: 80px;
+                margin-bottom: 80px;
                 font-size: 45px;
+                position: relative;
+                &::after {
+                    content:  "";
+                    position: absolute;
+                    left: 50%;
+                    transform: translateX(-50%);
+                    bottom: -50px;
+                    width: 1px;
+                    height: 32px;                  
+                    background:  #8c8474;
+                    @include media-sp {
+                        height: 34rem;
+                        bottom: -50rem;
+                    }
+                }
                 @include media-sp {
-                    padding-bottom: 88rem;
+                    margin-bottom: 88rem;
                     font-size: 48rem;
                 }
+                
             }
             .__btn {
                 @include flex-hc-vc;
@@ -765,14 +782,15 @@ header{
                 gap: 30rem;
                 padding-left: 34rem;
                 padding-right: 34rem;
-            }
-            &:last-child {
-                padding-bottom: 185rem;
-                @include media-sp {
-                    padding-bottom: 0;
-                }
             }           
             .__item {
+                &:last-child {
+                    padding-bottom: 185rem;
+                    @include media-sp {
+                        padding-bottom: 0;
+                        margin-bottom: 60rem;
+                    }
+                }           
                 width: calc((100% - 80px) / 3);
                 @include media-sp {
                     width: 100%;                    
@@ -850,7 +868,7 @@ header{
                 }
                 }
                 .__item-subttl {             
-                    font-family: YuGothic;
+                    font-family: yugothic-medium;
                     font-weight: 500;
                     font-size: 14px;                 
                     color: #404040; 
@@ -1123,6 +1141,7 @@ header{
         background: #efe9e7;
         padding-left: 40rem;
         padding-right: 40rem;
+        height: 1480rem;
         .sp__contents {
             background: #fff;
             padding-top: 42rem;
@@ -1141,18 +1160,22 @@ header{
                     padding-bottom: 26rem;
                 }
                 .sp__contents-subttl {
-                    font-family: YuGothic;
+                    font-family: yugothic-medium;
                     font-weight: 500;
                     font-size: 26rem;
                     line-height: 22.85px;       
                     color: #404040;
                     padding-bottom: 122rem;
-                    line-height: 1.5;
+                    line-height: calc(25.85/14);
+                    .yu-medium {
+                        font-family: YuGothic;
+                    }
                 }
             }
             .sp__contents-mid {
                 @include flex-hc-vc;
                 margin-bottom: 86rem;
+                padding-top: 20rem;
                 .sp__contents-mid__text {
                     display: flex;
                     flex-direction: column;
@@ -1328,7 +1351,7 @@ header{
                 position: relative;  
                 @include media-sp {
                     margin-top: 55rem;
-                    font-size: 28rem;
+                    font-size: 32rem;
                     width: 500rem;
                     height: 93rem;
                 }                 
@@ -1508,7 +1531,7 @@ header{
                 gap: 30rem;
             }
             @include media-sp {            
-                margin-top: 86rem;             
+                margin-top: 25rem;             
                 padding-top: 44rem;  
                 padding-left: 0rem;
                 padding-right: 0rem;  
@@ -1676,7 +1699,7 @@ header{
         margin-left: auto;
         margin-right: auto;
         @include media-sp {
-            padding: 88rem 40rem 80rem 40rem;
+            padding: 0rem 40rem 80rem 40rem;
         }    
         &__ttl {
             font-family: YuGothic;
@@ -1704,7 +1727,7 @@ header{
                 height: 27px;
                 @include media-sp {
                     top: -10rem;
-                    left: -34rem;
+                    left: -70rem;
                 }
             }
         }      
@@ -1970,11 +1993,15 @@ header{
                     background: transparent;
                     @include media-pc {
                         font-size: 24rem;                                          
-                        line-height: 2;
+                        line-height: 1.5;
+                        display: flex;
+                        flex-direction: column;
+                        align-items: center;
                     } 
                     @include media-sp {                  
                         font-size: 32rem;                                          
-                        line-height: 1.2;
+                        line-height: calc(27/16);
+                        font-weight: 600;
                     }   
                 }             
             }
@@ -2205,6 +2232,7 @@ header{
                                 color: #696459;
                                 @include media-sp {
                                     font-size: 18rem;
+                                    letter-spacing: 0.1rem;
                                 }
                             }
                             @include media-pc {
@@ -2288,7 +2316,7 @@ header{
                         padding-top: 23rem;
                     }
                     span {
-                        font-family: YuGothic;
+                        font-family: yugothic-medium;
                         font-weight: 500;
                         font-size: 12px;
                         line-height: 17px;                      
@@ -2299,7 +2327,7 @@ header{
                         }
                         @include media-sp {
                             font-size: 20rem;
-                            line-height: 1.5;
+                            line-height: calc(17/10);
                         }
                     }
                 }            
@@ -2432,6 +2460,7 @@ header{
                 padding-right: 0;
                 padding-top: 0;
                 gap: 0;
+
             }
             .__items {
                 width: calc((100% - 104rem) / 2);               
@@ -2445,8 +2474,7 @@ header{
                     }                  
                 }        
                 .__inner-items {
-                    display: flex;
-                    justify-content: space-between;
+                    display: flex;                 
                     align-items: center;
                     gap: 27px;
                     padding-right: 100px;
@@ -2455,7 +2483,8 @@ header{
                         padding-right: 100rem;
                     }
                     @include media-sp {
-                        gap: 30rem;               
+                        gap: 30rem; 
+                        padding-right: 0;              
                     }                   
                     &--answer{
                         padding-top: 20px;
@@ -2494,6 +2523,8 @@ header{
                         @include flex-hc-vc;  
                         @include media-sp {
                             font-size: 38rem;
+                            min-width: 58rem;
+                            height: 58rem;
                         }          
                     }  
                     .bg-color {
@@ -3361,6 +3392,14 @@ header{
             }
         }
 
+        .swiper-button-next.swiper-button-disabled, .swiper-button-prev.swiper-button-disabled {
+            opacity: 0.5;
+        }
+
+        .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled {
+            opacity: 0.5;
+        }
+
         .mySwiper {
           height: 20%;
           box-sizing: border-box;
@@ -3650,7 +3689,7 @@ header{
                 color: #696459;  
                 @include media-sp {
                     font-size: 32rem;
-                    line-height: 43px;
+                    line-height: 1.2;
                 } 
                 img {
                     width: 22px;
@@ -3662,7 +3701,7 @@ header{
                 }
             }  
             .td__time {
-                font-family: YuGothic;
+                font-family: yugothic-medium;
                 font-weight: 500;
                 font-size: 21px;
                 line-height: calc(56/21);
@@ -3674,7 +3713,7 @@ header{
                     display: flex;
                     flex-direction: column;
                     justify-content: flex-end;
-                    line-height: 2.5;
+                    line-height: 1.2;
                 }
             }             
         }   
@@ -3736,7 +3775,7 @@ header{
             padding-right: 40rem;
             padding-top: 43rem;
             padding-bottom: 43rem;      
-            font-family: YuGothic;
+            font-family: yugothic-medium;
             font-weight: 500;
             font-size: 14px;           
             color: #333;

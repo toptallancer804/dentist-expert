@@ -592,6 +592,12 @@ html.has-scroll-dragging {
   transform: translateY(-50%);
   width: 0%;
 }
+@media screen and (max-width: 767px) {
+  .accordion:after {
+    right: 35rem;
+    font-size: 40rem;
+  }
+}
 
 .active:after {
   content: "−";
@@ -911,6 +917,7 @@ header .__item-top .__item-phone .__number {
     padding-bottom: 14rem;
     padding-left: 0;
     font-size: 22rem;
+    margin-top: -20rem;
   }
 }
 .p-main .p-fv__contents .__ttl {
@@ -1025,7 +1032,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-fv__contents .__wrap .__icon-ttl {
     padding-top: 16rem;
-    font-size: 16rem;
+    font-size: 14rem;
     line-height: 1.5;
   }
 }
@@ -1095,7 +1102,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-treatment__contents {
     top: -100rem;
-    padding: 33rem 64rem 48rem 60rem;
+    padding: 32rem 56rem 48rem 50rem;
   }
 }
 .p-main .p-treatment__contents-top {
@@ -1225,7 +1232,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-treatment__contents-bottom {
-    padding-left: 6rem;
+    padding-left: 0;
     padding-right: 0;
   }
 }
@@ -1247,7 +1254,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-treatment__contents-bottom .treatment__line {
-    font-size: 36rem;
+    font-size: 34rem;
     width: 536rem;
     height: 100rem;
   }
@@ -1271,7 +1278,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-treatment__contents-bottom .treatment__line span {
-    font-size: 46rem;
+    font-size: 40rem;
   }
 }
 .p-main .p-treatment__contents-bottom .treatment__line::after {
@@ -1323,7 +1330,7 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-trouble__text .__ttl .t-color {
-  color: #ea6a54;
+  color: #FBA443;
 }
 .p-main .p-trouble__text .__text {
   padding-top: 56px;
@@ -1419,12 +1426,29 @@ header .__item-top .__item-phone .__number {
 }
 .p-main .p-solve__ttl .pb-80 {
   color: #635146;
-  padding-bottom: 80px;
+  margin-bottom: 80px;
   font-size: 45px;
+  position: relative;
+}
+.p-main .p-solve__ttl .pb-80::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: -50px;
+  width: 1px;
+  height: 32px;
+  background: #8c8474;
+}
+@media screen and (max-width: 767px) {
+  .p-main .p-solve__ttl .pb-80::after {
+    height: 34rem;
+    bottom: -50rem;
+  }
 }
 @media screen and (max-width: 767px) {
   .p-main .p-solve__ttl .pb-80 {
-    padding-bottom: 88rem;
+    margin-bottom: 88rem;
     font-size: 48rem;
   }
 }
@@ -1464,16 +1488,17 @@ header .__item-top .__item-phone .__number {
     padding-right: 34rem;
   }
 }
-.p-main .p-solve__contents:last-child {
+.p-main .p-solve__contents .__item {
+  width: calc((100% - 80px) / 3);
+}
+.p-main .p-solve__contents .__item:last-child {
   padding-bottom: 185rem;
 }
 @media screen and (max-width: 767px) {
-  .p-main .p-solve__contents:last-child {
+  .p-main .p-solve__contents .__item:last-child {
     padding-bottom: 0;
+    margin-bottom: 60rem;
   }
-}
-.p-main .p-solve__contents .__item {
-  width: calc((100% - 80px) / 3);
 }
 @media screen and (max-width: 767px) {
   .p-main .p-solve__contents .__item {
@@ -1568,7 +1593,7 @@ header .__item-top .__item-phone .__number {
   display: flex;
 }
 .p-main .p-solve__contents .__item-subttl {
-  font-family: YuGothic;
+  font-family: yugothic-medium;
   font-weight: 500;
   font-size: 14px;
   color: #404040;
@@ -1886,6 +1911,7 @@ header .__item-top .__item-phone .__number {
   background: #efe9e7;
   padding-left: 40rem;
   padding-right: 40rem;
+  height: 1480rem;
 }
 .p-main .p-cost__contents--sp .sp__contents {
   background: #fff;
@@ -1905,19 +1931,23 @@ header .__item-top .__item-phone .__number {
   padding-bottom: 26rem;
 }
 .p-main .p-cost__contents--sp .sp__contents .sp__contents-top .sp__contents-subttl {
-  font-family: YuGothic;
+  font-family: yugothic-medium;
   font-weight: 500;
   font-size: 26rem;
   line-height: 22.85px;
   color: #404040;
   padding-bottom: 122rem;
-  line-height: 1.5;
+  line-height: 1.8464285714;
+}
+.p-main .p-cost__contents--sp .sp__contents .sp__contents-top .sp__contents-subttl .yu-medium {
+  font-family: YuGothic;
 }
 .p-main .p-cost__contents--sp .sp__contents .sp__contents-mid {
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 86rem;
+  padding-top: 20rem;
 }
 .p-main .p-cost__contents--sp .sp__contents .sp__contents-mid .sp__contents-mid__text {
   display: flex;
@@ -2119,7 +2149,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-cost__contents--sp .sp__contents .sp__contents-btn {
     margin-top: 55rem;
-    font-size: 28rem;
+    font-size: 32rem;
     width: 500rem;
     height: 93rem;
   }
@@ -2330,7 +2360,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-case__contents {
-    margin-top: 86rem;
+    margin-top: 25rem;
     padding-top: 44rem;
     padding-left: 0rem;
     padding-right: 0rem;
@@ -2530,7 +2560,7 @@ header .__item-top .__item-phone .__number {
 }
 @media screen and (max-width: 767px) {
   .p-main .p-healing {
-    padding: 88rem 40rem 80rem 40rem;
+    padding: 0rem 40rem 80rem 40rem;
   }
 }
 .p-main .p-healing__ttl {
@@ -2565,7 +2595,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-healing__ttl::before {
     top: -10rem;
-    left: -34rem;
+    left: -70rem;
   }
 }
 .p-main .p-healing__subttl {
@@ -2880,13 +2910,17 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 1290px) {
   .p-main .p-orthodontist__contents .more__btn .__more-view {
     font-size: 24rem;
-    line-height: 2;
+    line-height: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 @media screen and (max-width: 767px) {
   .p-main .p-orthodontist__contents .more__btn .__more-view {
     font-size: 32rem;
-    line-height: 1.2;
+    line-height: 1.6875;
+    font-weight: 600;
   }
 }
 .p-main .p-orthodontist .__view {
@@ -3159,6 +3193,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-plan__contents .__wrap .__wrap-text .__text-contents .__text-number .small__span {
     font-size: 18rem;
+    letter-spacing: 0.1rem;
   }
 }
 @media screen and (max-width: 1290px) {
@@ -3261,7 +3296,7 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-plan__contents .__wrap .__wrap-items span {
-  font-family: YuGothic;
+  font-family: yugothic-medium;
   font-weight: 500;
   font-size: 12px;
   line-height: 17px;
@@ -3276,7 +3311,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-plan__contents .__wrap .__wrap-items span {
     font-size: 20rem;
-    line-height: 1.5;
+    line-height: 1.7;
   }
 }
 .p-main .p-plan__contents .br-color {
@@ -3448,7 +3483,6 @@ header .__item-top .__item-phone .__number {
 }
 .p-main .p-question__contents .__inner-items {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   gap: 27px;
   padding-right: 100px;
@@ -3462,6 +3496,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-question__contents .__inner-items {
     gap: 30rem;
+    padding-right: 0;
   }
 }
 .p-main .p-question__contents .__inner-items--answer {
@@ -3509,6 +3544,8 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-question__contents .__inner-items .__inner {
     font-size: 38rem;
+    min-width: 58rem;
+    height: 58rem;
   }
 }
 .p-main .p-question__contents .__inner-items .bg-color {
@@ -4449,6 +4486,12 @@ header .__item-top .__item-phone .__number {
     opacity: 0.2;
   }
 }
+.p-main .p-swiper .swiper-button-next.swiper-button-disabled, .p-main .p-swiper .swiper-button-prev.swiper-button-disabled {
+  opacity: 0.5;
+}
+.p-main .p-swiper .swiper-button-prev.swiper-button-disabled, .p-main .p-swiper .swiper-button-next.swiper-button-disabled {
+  opacity: 0.5;
+}
 .p-main .p-swiper .mySwiper {
   height: 20%;
   box-sizing: border-box;
@@ -4772,7 +4815,7 @@ header .__item-top .__item-phone .__number {
 @media screen and (max-width: 767px) {
   .p-main .p-time table th, .p-main .p-time table td {
     font-size: 32rem;
-    line-height: 43px;
+    line-height: 1.2;
   }
 }
 .p-main .p-time table th img, .p-main .p-time table td img {
@@ -4786,7 +4829,7 @@ header .__item-top .__item-phone .__number {
   }
 }
 .p-main .p-time table .td__time {
-  font-family: YuGothic;
+  font-family: yugothic-medium;
   font-weight: 500;
   font-size: 21px;
   line-height: 2.6666666667;
@@ -4800,7 +4843,7 @@ header .__item-top .__item-phone .__number {
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
-    line-height: 2.5;
+    line-height: 1.2;
   }
 }
 .p-main .p-time .__time-table {
@@ -4869,7 +4912,7 @@ header .__item-top .__item-phone .__number {
   padding-right: 40rem;
   padding-top: 43rem;
   padding-bottom: 43rem;
-  font-family: YuGothic;
+  font-family: yugothic-medium;
   font-weight: 500;
   font-size: 14px;
   color: #333;

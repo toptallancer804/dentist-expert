@@ -1,3 +1,5 @@
+@import "_layout";
+
 .accordion {
     cursor: pointer;
     width: 100%;
@@ -15,6 +17,10 @@
     right: 20px;
     transform: translateY(-50%);
     width: 0%;
+    @include media-sp {
+      right: 35rem;
+      font-size: 40rem;
+    }
   }
   
   .active:after {
